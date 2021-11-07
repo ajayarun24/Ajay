@@ -119,6 +119,6 @@ facilitates an environment in which each member can contribute and grow their te
 applications.
 
 Signed by:
-Sarthak Singh, Singh94\n
-Ajay Arun, ajayka2\n
-Pranav Rajaraman, pranavr5\n
+Sarthak Singh, Singh94  
+Ajay Arun, ajayka2  
+Pranav Rajaraman, pranavr5  
