@@ -1,3 +1,5 @@
+11/21
+START:
 We met this week and set the framework for working collaboratively on our project for the next few weeks. 
 
 Data Parsing:
@@ -19,3 +21,5 @@ Ex. We put it into a vector because of _____
 
 Document detailing how we are fulfilling the graph requirements of our project, and how that graph will be used with the algorithms we decided on (Dijkstra’s Algorithm and BFS) to create the final project
 
+-------------------------------------END------------------------------------
+11/24
