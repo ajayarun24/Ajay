@@ -18,5 +18,5 @@ endif()
 # https://stackoverflow.com/questions/43862273/cmake-c-include-relative-to-base-directory
 project(Railroad VERSION 1.0)
 
-add_subdirectory(parsing)
+add_subdirectory(parsedData)
 add_subdirectory(adder)
