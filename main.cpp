@@ -74,6 +74,28 @@ std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filen
     return result;
 }
 
+struct location
+{
+    string name;
+    long latitude, longitude;
+    bool n,e;
+    int costFactor, priority;
+    string state;
+    vector<string> neighboringStates ;
+    
+    location(string Name, long lat, long longi, bool N, bool E, int CostFactor, int Priotity, string State){
+        name = Name;
+        latitude = lat;
+        longitude= longi;
+        n = N;
+        e = E;
+        costFactor = CostFactor;
+        priority = Priotity;
+        state = State;
+    }
+    
+};
+
 int main() {
     // Read three_cols.csv and ones.csv
     std::vector<std::pair<std::string, std::vector<int> > > test_read = read_csv("data/CS225 final project data.csv");
