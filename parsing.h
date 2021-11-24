@@ -33,8 +33,7 @@ class parsing{
     };
     //Empty constructor doesnt do anything 
     parsing();
-    ~parsing();
     void fillVector(string PlaceFilename);
     void fillNeihboringStates(string StateFileName);
-    vector<location> * diffLocations ;
+    vector<location> diffLocations ;
 };

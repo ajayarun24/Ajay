@@ -3,14 +3,7 @@
 using std::ifstream;
 
 //Empty constructor 
-parsing::parsing() 
-{ 
-    diffLocations = new vector<location>() ;
-}
-
-parsing::~parsing(){
-    delete diffLocations;
-}
+parsing::parsing() { }
 
 void parsing::fillVector(string placesFileName){
 
@@ -20,7 +13,7 @@ void parsing::fillVector(string placesFileName){
         std::cout << "Failed to open File" << std::endl;
     }
 
-    string name, latitude, longitude, n,e,costFactor,prioity, state;
+    string name, latitude, longitude, costFactor,prioity, state;
      
 
     while(fin.good()){
@@ -31,8 +24,6 @@ void parsing::fillVector(string placesFileName){
         getline(fin, prioity, ',');
         getline(fin, state, '\n');
 
-       // std::cout << latitude << std::endl;
-
         double lat = std::atof(latitude.c_str());
         double longi = std::atof(longitude.c_str());
         std::stringstream temp1(prioity);
@@ -40,8 +31,21 @@ void parsing::fillVector(string placesFileName){
         temp1 >> x;
 
         location temp(name,lat,longi,0,x,state);
-        diffLocations->push_back(temp);
+        diffLocations.push_back(temp);
         
     }
     fin.close();
 }
+
+void parsing::fillNeihboringStates(string filename){
+    ifstream fin(filename);
+
+    if (!fin.is_open())
+        std::cout << "Failed to open File" << std::endl;
+
+    while (fin.good()){
+
+
+    }
+
+};
