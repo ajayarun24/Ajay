@@ -1,5 +1,5 @@
 EXENAME = main
-OBJS = main.o someprogram.o
+OBJS = main.o someprogram.o parsing.o
 
 CXX = clang++
 CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
@@ -14,11 +14,14 @@ $(EXENAME) : output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
 #object file dependncies
-main.o : main.cpp someprogram.o
+main.o : main.cpp someprogram.cpp someprogram.h parsing.h parsing.cpp
 	$(CXX) $(CXXFLAGS) main.cpp
 
 someprogram.o : someprogram.cpp someprogram.h 
 	$(CXX) $(CXXFLAGS) someprogram.cpp
+
+parsing.o : parsing.h parsing.cpp  
+	$(CXX) $(CXXFLAGS) parsing.cpp
 
 
 # Custom Clang version enforcement Makefile rule:
