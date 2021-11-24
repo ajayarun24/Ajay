@@ -1,5 +1,3 @@
-
-
 Name
 
 Latitude
@@ -913,4 +911,3 @@ Joshua Tree
 National Park
 
 100
-
