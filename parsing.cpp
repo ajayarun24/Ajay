@@ -1,7 +1,8 @@
 #include "parsing.h"
 
 using std::ifstream;
-
+using std::cout;
+using std::endl;
 //Empty constructor 
 parsing::parsing() { }
 
@@ -42,10 +43,18 @@ void parsing::fillNeihboringStates(string filename){
 
     if (!fin.is_open())
         std::cout << "Failed to open File" << std::endl;
-
+    string state, neighborstate;
     while (fin.good()){
+        getline(fin, state, ',');
+        getline(fin, neighborstate,'\n');
+        state = state + "\r";
 
-
+        for (std::vector<location>::iterator it = diffLocations.begin(); it != diffLocations.end(); it++){
+            if((*it).state  == state){
+                (*it).neighboringStates.push_back(neighborstate);
+                    break;
+            }
+        }
     }
-
+    fin.close();
 };
