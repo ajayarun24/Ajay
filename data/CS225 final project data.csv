@@ -1,0 +1,104 @@
+Name,Latitude,Longitude,Cost,Priority of visiting
+Yosemite National Park,37.8651° N,137.8651° N,0,1
+Everglades National Park,25.2866° N,80.8987° W,0,2
+Yellowstone National Park,"44.4280° N,",110.5885°,0,3
+San Antonio Missions National Historical Park,"29.3604° N,","98.4792° W
+",0,4
+Times Square,40.7580° N,73.9855° W,0,5
+Pictured Rocks National Lakeshore ,"46.5216° N,",86.4551° W,0,6
+Kauai,"22.0964° N,",159.5261° W,0,7
+Beacon Hill,42.3588° N,71.0707° W,0,8
+Valley of Fire State Park,36.5073° N,114.5352° W,0,9
+The Wave,37.0424° N,112.5122° W,0,10
+One World Trade Center,40.7127° N,74.0134° W,0,11
+Badlands National Park,43.8554° N,102.3397° W,0,12
+360 Chicago Observation Deck,41.8989° N,87.6235° W,0,13
+Devils Tower,44.5902° N,104.7146° W,0,14
+Olympic National Park,47.8021° N,123.6044° W,0,15
+Brooklyn Bridge,40.7061° N,73.9969° W,0,16
+Malibu,34.0259° N,118.7798° W,0,17
+Misty Fjords National Monument ,55.3718 N,130.3626 W,0,18
+Lahaina,20.8783° N,156.6825° W,0,19
+Chrysler Building,40.7516° N,73.9755° W,0,20
+Venice Beach,33.9850° N,118.4695° W,0,21
+Rocky Mountains National Park,40.3428° N,105.6836° W,0,22
+Napa Valley,38.5025° N,122.2654° W,0,23
+Lincoln Memorial ,38.8893° N,77.0502° W,0,24
+Guggenheim Museum ,40.7830° N,73.9590° W,0,25
+Catalina Island ,33.3879° N,118.4163° W,0,26
+Molokai,21.1444° N,157.0226° W,0,27
+Santa Monica,34.0195° N,118.4912° W,0,28
+Redwood National Park,41.2132° N,24.0046° W,0,29
+Golden Gate Bridge ,37.8199° N,122.4783° W,0,30
+SeaWorld,28.4097° N,81.4597° W,0,31
+Horseshoe Bend,36.8791° N,111.5104° W,0,32
+French Quarter ,29.9584° N,90.0644° W,0,33
+Saint Augustine,29.9012° N,81.3124° W,0,34
+Montezuma Castle ,34.6116° N,111.8350° W,0,35
+Lanikai Beach,21.3925° N,157.7151° W,0,36
+Great Smoky Mountains National Park,35.6131° N,83.5532° W,0,37
+Chimney Rock,35.4393° N,82.2465° W,0,38
+Madison Square Garden ,40.7505° N,73.9934° W,0,39
+Crater Lake,42.9446° N,122.1090° W,0,40
+Dakota Building,40.7765° N,73.9761° W,0,41
+Mount Hood National Forest ,45.3298° N,121.7132° W,0,42
+Isle Royale National Park,47.9959° N,88.9093° W,0,43
+Fairmount Park,39.9881° N,75.1971° W,0,44
+Wailea Beach,20.6828° N,156.4430° W,0,45
+Mono Lake,38.0128° N,118.9762° W,0,46
+Central Park,"40.7812° N,",73.9665° W,0,47
+Washington Monument ,38.8895° N,77.0353° W,0,48
+The Pentagon ,38.8719° N,77.0563° W,0,49
+Beverly Hills,34.0736° N,118.4004° W,0,50
+Mesa Verde National Park,37.2309° N,108.4618° W,0,51
+Apostle Islands,47.0027° N,90.6908° W,0,52
+The White House ,38.8977° N,77.0365° W,0,53
+The Statue of Liberty ,40.6892° N,74.0445° W,0,54
+Zion National Park ,37.2982° N,113.0263° W,0,55
+La Jolla Beach,32.8503° N,117.2730° W,0,56
+Field Museum of Natural History,41.8663° N,87.6170° W,0,57
+Oneonta Gorge,45.5792° N,122.0723° W,0,58
+Mount Rushmore ,43.8791° N,103.4591° W,0,59
+Hamilton Pool Preserve,30.3423° N,98.1271° W,0,60
+Graceland Mansion,35.0477° N,90.0260° W,0,61
+Empire State Building,40.7484° N,73.9857° W,0,62
+Hollywood,34.0928° N,118.3287° W,0,63
+Flatiron Building ,40.7411° N,73.9897° W,0,64
+Cathedral Basilica of Saint Louis,38.6425° N,90.2547° W,0,65
+Atlantic City,39.3643° N,74.4229° W,0,66
+Hawai’i Volcanoes National Park,19.4194° N,155.2885° W,0,67
+Savannah,32.0809° N,81.0912° W,0,68
+Space Needle,47.6205° N,122.3493° W,0,69
+Cannon Beach,45.8918° N,123.9615° W,0,70
+Gulf State Park ,30.2684° N,87.6342° W,0,71
+The Glass Beaches of Fort Bragg,39.4526° N,123.8135° W,0,72
+Mount Rainier National Park ,46.8800° N,121.7269° W,0,73
+"Art Deco Historic District, Miami Beach",25.7803° N,"80.1304° W
+",0,74
+Havasu Creek,34.483696° N,114.325638° W,0,75
+Museum of Modern Art – MoMA,40.7614° N,73.9776° W,0,76
+Glacier National Park,48.7596° N,113.7870° W,0,77
+Key West,24.5551° N,81.7800° W,0,78
+"The Gateway Arch, St. Louis ",38.6247° N,90.1848° W,0,79
+Niagara Falls,43.0962° N,"79.0377° W
+",0,80
+Arches National Park ,38.7331° N,109.5925° W,0,81
+Mammoth Cave National Park ,37.1862° N,86.1000° W,0,82
+Walk of Fame,34.1016° N,118.3267° W,0,83
+Alcatraz Island,37.8270° N,122.4230° W,0,84
+Antelope Canyon,6.8619° N,111.3743° W,0,85
+Three Pools,44.8390° N,122.3119° W,0,86
+Las Vegas Strip,36.1147° N,115.1728° W,0,87
+Disneyland,33.8121° N,117.9190° W,0,88
+Denali National Park,63.1148° N,151.1926° W,0,89
+The Capitol Building ,38.8899° N,77.0091° W,0,90
+Emerald Coast,30.3935° N,86.4958° W,0,91
+Monument Valley,36.9980° N,110.0985° W,0,92
+Waikiki Beach,21.2793° N,157.8292° W,0,93
+Cape Cod,41.6688° N,70.2962° W,0,94
+Dry Tortugas National Park ,24.6285° N,82.8732° W,0,95
+Grand Canyon National Park ,36.1069° N,112.1129° W,0,96
+Death Valley,36.5323° N,116.9325° W,0,97
+Aspen,39.1911° N,106.8175° W,0,98
+White Sands National Monument,32.7872° N,106.3257° W,0,99
+Joshua Tree National Park ,33.8734° N,115.9010° W,0,100

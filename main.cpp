@@ -76,8 +76,8 @@ std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filen
 
 int main() {
     // Read three_cols.csv and ones.csv
-    std::vector<std::pair<std::string, std::vector<int>>> test_read = read_csv("data/NationalAttractions.csv");
-    
+    std::vector<std::pair<std::string, std::vector<int> > > test_read = read_csv("data/CS225 final project data.csv");
+
     pair<string,vector<int> > tester = test_read[1];
     std::cout << tester.first << std::endl;
     return 0;
