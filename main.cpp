@@ -73,7 +73,7 @@ std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filen
 
     return result;
 }
-
+//Testing
 struct location
 {
     string name;
@@ -93,8 +93,8 @@ struct location
         priority = Priotity;
         state = State;
     }
-    
 };
+
 
 int main() {
     // Read three_cols.csv and ones.csv
