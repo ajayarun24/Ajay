@@ -6,11 +6,11 @@ TEST_PARSING="test-parsing"
 TEST_ADDER="test-adder"
 
 echo "Testing Parsing"
-cd parsing/
+cd parsedData/
 ./$TEST_PARSING
 cd ..
 
 echo "Testing Adder"
-cd adder/
+cd BFS/
 ./$TEST_ADDER
 cd ..
