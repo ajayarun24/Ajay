@@ -1,4 +1,4 @@
-Start 11/25 We met this week to check in on the progress of our past week, solve bugs, and develop plans for the next week. Additionally, we discussed the nd implementation of our program.
+Start 11/24 We met this week to check in on the progress of our past week, solve bugs, and develop plans for the next week. Additionally, we discussed the nd implementation of our program.
 
 
 Last week update: 
@@ -42,6 +42,6 @@ To find the shortest path we are using Dijkstra's algorithm and that needs to be
 
 -----------------------------------------------------------------------
 
-Find surrounding states from an input - Jaylen
-We need to begin figuring out how we will graphically implement our project so we need to understand how we can draw an arrow from one state to a surrounding one. 
------------------------------------------------------------------------
+Find surrounding states from an input - Jaylen We need to begin figuring out how we will graphically implement our project so we need to understand how we can draw an arrow from one state to a surrounding one.  
+
+----------------------------------------------------------------------- END: 11/28
