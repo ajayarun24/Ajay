@@ -1,6 +1,6 @@
-Yosemite National Park,37.8651,137.8651,0,1,CA
+Yosemite National Park,37.8651,119.5383,0,1,CA
 Everglades National Park,25.2866,80.8987,0,2,FL
-Yellowstone National Park,44.4280,37.8651,0,3,WY
+Yellowstone National Park,44.4280,110.5885,0,3,WY
 San Antonio Missions National Historical Park,29.3604,98.4792,0,4,TX
 Times Square,40.7580,73.9855,0,5,NY
 Pictured Rocks National Lakeshore,46.5216,86.4551,0,6,MI
@@ -29,7 +29,7 @@ Redwood National Park,41.2132,24.0046,0,29,CA
 Golden Gate Bridge,37.8199,122.4783,0,30,CA
 SeaWorld,28.4097,81.4597,0,31,FL
 Horseshoe Bend,36.8791,111.5104,0,32,AZ
-French Quarter,29.9584,90.0644,0,33,NO
+French Quarter,29.9584,90.0644,0,33,LA
 Saint Augustine,29.9012,81.3124,0,34,FL
 Montezuma Castle,34.6116,111.8350,0,35,IN
 Lanikai Beach,21.3925,157.7151,0,36,HI
@@ -44,12 +44,12 @@ Fairmount Park,39.9881,75.1971,0,44,PA
 Wailea Beach,20.6828,156.4430,0,45,HI
 Mono Lake,38.0128,118.9762,0,46,CA
 Central Park,40.7812 ,73.9665,0,47,NY
-Washington Monument,38.8895,77.0353,0,48,in dc
+Washington Monument,38.8895,77.0353,0,48,DC
 The Pentagon,38.8719,77.0563,0,49,VA
 Beverly Hills,34.0736,118.4004,0,50,CA
 Mesa Verde National Park,37.2309,108.4618,0,51,CO
 Apostle Islands,47.0027,90.6908,0,52,WI
-The White House,38.8977,77.0365,0,53,in dc
+The White House,38.8977,77.0365,0,53,DC
 The Statue of Liberty,40.6892,74.0445,0,54,NY
 Zion National Park,37.2982,113.0263,0,55,UT
 La Jolla Beach,32.8503,117.2730,0,56,CA
@@ -68,7 +68,7 @@ Savannah,32.0809,81.0912,0,68,GA
 Space Needle,47.6205,122.3493,0,69,WA
 Cannon Beach,45.8918,123.9615,0,70,OR
 Gulf State Park,30.2684,87.6342,0,71,OR
-The Glass Beaches of Fort Bragg,39.4526,123.8135,0,72,
+The Glass Beaches of Fort Bragg,39.4526,123.8135,0,72,CA
 Mount Rainier National Park,46.8800,121.7269,0,73,WA
 Art Deco Historic District Miami Beach,25.7803,80.1304,0,74,FL
 Havasu Creek,34.483696,114.325638,0,75,AZ

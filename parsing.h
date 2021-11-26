@@ -10,10 +10,10 @@ using std::fstream;
 using std::ios;
 
 
-class parsing{
+class Parsing{
     public:
 
-    struct location
+    struct Location
     {
         string name;
         double latitude, longitude;
@@ -21,7 +21,7 @@ class parsing{
         string state;
         vector<string> neighboringStates;
 
-        location(string Name, double lat, double longi, int CostFactor, int Priotity, string StateN)
+        Location(string Name, double lat, double longi, int CostFactor, int Priotity, string StateN)
         {
             name = Name;
             latitude = lat;
@@ -32,8 +32,8 @@ class parsing{
         }
     };
     //Empty constructor doesnt do anything 
-    parsing();
+    Parsing();
     void fillVector(string PlaceFilename);
-    void fillNeihboringStates(string StateFileName);
-    vector<location> diffLocations ;
+    void fillNeighboringStates(string StateFileName);
+    vector<Location> diffLocations ;
 };

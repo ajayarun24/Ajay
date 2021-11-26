@@ -1,15 +1,24 @@
-#include "someprogram.h"
+
 #include <iostream>
 #include <string>
 #include "parsing.h"
 #include <stdlib.h>
+#include "calculator.h"
+#include "roadtripgraph.h"
 
-using ::parsing;
+using ::Parsing;
 
 int main() {
-    parsing myParse ;
+    Parsing myParse ;
     myParse.fillVector("data/CS225 final project data.csv");
-    myParse.fillNeihboringStates("data/neighbors-states.csv") ;
+    myParse.fillNeighboringStates("data/neighbors-states.csv") ;
+
+
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+
+    graph.createGraph();
+
+
     return 0;
 }
 
