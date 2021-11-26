@@ -19,5 +19,7 @@ class RoadTripGraph {
     
     vector<vector<double>> adjacencyMatrix;
 
+    vector<vector<Parsing::Location*>> adjacencyList;
+
     vector<Parsing::Location> locations;
 };

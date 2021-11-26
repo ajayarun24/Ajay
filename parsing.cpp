@@ -57,4 +57,6 @@ void Parsing::fillNeighboringStates(string filename){
         }
     }
     fin.close();
+
+    diffLocations[diffLocations.size() - 1].state = diffLocations[diffLocations.size() - 1].state + '\r';
 };
