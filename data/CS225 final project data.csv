@@ -1,102 +1,98 @@
-Name,Latitude,Longitude,Cost,Priority of visiting,State
-Yosemite National Park,37.8651° N,137.8651° N,0,1,CA
-Everglades National Park,25.2866° N,80.8987° W,0,2,FL
-Yellowstone National Park,"44.4280° N,",110.5885°,0,3,WY
-San Antonio Missions National Historical Park,"29.3604° N,","98.4792° W
-",0,4,TX
-Times Square,40.7580° N,73.9855° W,0,5,NY
-Pictured Rocks National Lakeshore ,"46.5216° N,",86.4551° W,0,6,MI
-Kauai,"22.0964° N,",159.5261° W,0,7,HI
-Beacon Hill,42.3588° N,71.0707° W,0,8,MA
-Valley of Fire State Park,36.5073° N,114.5352° W,0,9,NV
-The Wave,37.0424° N,112.5122° W,0,10,AZ
-One World Trade Center,40.7127° N,74.0134° W,0,11,NY
-Badlands National Park,43.8554° N,102.3397° W,0,12,SD
-360 Chicago Observation Deck,41.8989° N,87.6235° W,0,13,IL
-Devils Tower,44.5902° N,104.7146° W,0,14,WY
-Olympic National Park,47.8021° N,123.6044° W,0,15,WA
-Brooklyn Bridge,40.7061° N,73.9969° W,0,16,NY
-Malibu,34.0259° N,118.7798° W,0,17,CA
-Misty Fjords National Monument ,55.3718 N,130.3626 W,0,18,AK
-Lahaina,20.8783° N,156.6825° W,0,19,HI
-Chrysler Building,40.7516° N,73.9755° W,0,20,NY
-Venice Beach,33.9850° N,118.4695° W,0,21,CA
-Rocky Mountains National Park,40.3428° N,105.6836° W,0,22,CO
-Napa Valley,38.5025° N,122.2654° W,0,23,CA
-Guggenheim Museum ,40.7830° N,73.9590° W,0,25,NY
-Catalina Island ,33.3879° N,118.4163° W,0,26,CA
-Molokai,21.1444° N,157.0226° W,0,27,HI
-Santa Monica,34.0195° N,118.4912° W,0,28,CA
-Redwood National Park,41.2132° N,24.0046° W,0,29,CA
-Golden Gate Bridge ,37.8199° N,122.4783° W,0,30,CA
-SeaWorld,28.4097° N,81.4597° W,0,31,FL
-Horseshoe Bend,36.8791° N,111.5104° W,0,32,AZ
-French Quarter ,29.9584° N,90.0644° W,0,33,NO
-Saint Augustine,29.9012° N,81.3124° W,0,34,FL
-Montezuma Castle ,34.6116° N,111.8350° W,0,35,IN
-Lanikai Beach,21.3925° N,157.7151° W,0,36,HI
-Great Smoky Mountains National Park,35.6131° N,83.5532° W,0,37,TN
-Chimney Rock,35.4393° N,82.2465° W,0,38,NC
-Madison Square Garden ,40.7505° N,73.9934° W,0,39,NY
-Crater Lake,42.9446° N,122.1090° W,0,40,OR
-Dakota Building,40.7765° N,73.9761° W,0,41,NY
-Mount Hood National Forest ,45.3298° N,121.7132° W,0,42,OR
-Isle Royale National Park,47.9959° N,88.9093° W,0,43,MI
-Fairmount Park,39.9881° N,75.1971° W,0,44,PA
-Wailea Beach,20.6828° N,156.4430° W,0,45,HI
-Mono Lake,38.0128° N,118.9762° W,0,46,CA
-Central Park,"40.7812° N,",73.9665° W,0,47,NY
-Washington Monument ,38.8895° N,77.0353° W,0,48,in dc
-The Pentagon ,38.8719° N,77.0563° W,0,49,VA
-Beverly Hills,34.0736° N,118.4004° W,0,50,CA
-Mesa Verde National Park,37.2309° N,108.4618° W,0,51,CO
-Apostle Islands,47.0027° N,90.6908° W,0,52,WI
-The White House ,38.8977° N,77.0365° W,0,53,in dc
-The Statue of Liberty ,40.6892° N,74.0445° W,0,54,NY
-Zion National Park ,37.2982° N,113.0263° W,0,55,UT
-La Jolla Beach,32.8503° N,117.2730° W,0,56,CA
-Field Museum of Natural History,41.8663° N,87.6170° W,0,57,IL
-Oneonta Gorge,45.5792° N,122.0723° W,0,58,OR
-Mount Rushmore ,43.8791° N,103.4591° W,0,59,SD
-Hamilton Pool Preserve,30.3423° N,98.1271° W,0,60,TX
-Graceland Mansion,35.0477° N,90.0260° W,0,61,TN
-Empire State Building,40.7484° N,73.9857° W,0,62,NY
-Hollywood,34.0928° N,118.3287° W,0,63,CA
-Flatiron Building ,40.7411° N,73.9897° W,0,64,NY
-Cathedral Basilica of Saint Louis,38.6425° N,90.2547° W,0,65,MO
-Atlantic City,39.3643° N,74.4229° W,0,66,NJ
-Hawai’i Volcanoes National Park,19.4194° N,155.2885° W,0,67,HI
-Savannah,32.0809° N,81.0912° W,0,68,GA
-Space Needle,47.6205° N,122.3493° W,0,69,WA
-Cannon Beach,45.8918° N,123.9615° W,0,70,OR
-Gulf State Park ,30.2684° N,87.6342° W,0,71,OR
-The Glass Beaches of Fort Bragg,39.4526° N,123.8135° W,0,72,
-Mount Rainier National Park ,46.8800° N,121.7269° W,0,73,WA
-"Art Deco Historic District, Miami Beach",25.7803° N,"80.1304° W
-",0,74,FL
-Havasu Creek,34.483696° N,114.325638° W,0,75,AZ
-Museum of Modern Art – MoMA,40.7614° N,73.9776° W,0,76,NY
-Glacier National Park,48.7596° N,113.7870° W,0,77,MO
-Key West,24.5551° N,81.7800° W,0,78,FL
-"The Gateway Arch, St. Louis ",38.6247° N,90.1848° W,0,79,MI
-Niagara Falls,43.0962° N,"79.0377° W
-",0,80,NY
-Arches National Park ,38.7331° N,109.5925° W,0,81,UT
-Mammoth Cave National Park ,37.1862° N,86.1000° W,0,82,KY
-Walk of Fame,34.1016° N,118.3267° W,0,83,CA
-Alcatraz Island,37.8270° N,122.4230° W,0,84,CA
-Antelope Canyon,6.8619° N,111.3743° W,0,85,AZ
-Three Pools,44.8390° N,122.3119° W,0,86,OR
-Las Vegas Strip,36.1147° N,115.1728° W,0,87,NV
-Disneyland,33.8121° N,117.9190° W,0,88,CA
-Denali National Park,63.1148° N,151.1926° W,0,89,AK
-Emerald Coast,30.3935° N,86.4958° W,0,91,FL
-Monument Valley,36.9980° N,110.0985° W,0,92,AZ
-Waikiki Beach,21.2793° N,157.8292° W,0,93,HI
-Cape Cod,41.6688° N,70.2962° W,0,94,MA
-Dry Tortugas National Park ,24.6285° N,82.8732° W,0,95,FL
-Grand Canyon National Park ,36.1069° N,112.1129° W,0,96,AZ
-Death Valley,36.5323° N,116.9325° W,0,97,CA
-Aspen,39.1911° N,106.8175° W,0,98,CO
-White Sands National Monument,32.7872° N,106.3257° W,0,99,NM
-Joshua Tree National Park ,33.8734° N,115.9010° W,0,100,CA
+Yosemite National Park,37.8651,119.5383,0,1,CA
+Everglades National Park,25.2866,80.8987,0,2,FL
+Yellowstone National Park,44.4280,110.5885,0,3,WY
+San Antonio Missions National Historical Park,29.3604,98.4792,0,4,TX
+Times Square,40.7580,73.9855,0,5,NY
+Pictured Rocks National Lakeshore,46.5216,86.4551,0,6,MI
+Kauai,22.0964,159.5261,0,7,HI
+Beacon Hill,42.3588,71.0707,0,8,MA
+Valley of Fire State Park,36.5073,114.5352,0,9,NV
+The Wave,37.0424,112.5122,0,10,AZ
+One World Trade Center,40.7127,74.0134,0,11,NY
+Badlands National Park,43.8554,102.3397,0,12,SD
+360 Chicago Observation Deck,41.8989,87.6235,0,13,IL
+Devils Tower,44.5902,104.7146,0,14,WY
+Olympic National Park,47.8021,123.6044,0,15,WA
+Brooklyn Bridge,40.7061,73.9969,0,16,NY
+Malibu,34.0259,118.7798,0,17,CA
+Misty Fjords National Monument,55.3718,130.3626,0,18,AK
+Lahaina,20.8783,156.6825,0,19,HI
+Chrysler Building,40.7516,73.9755,0,20,NY
+Venice Beach,33.9850,118.4695,0,21,CA
+Rocky Mountains National Park,40.3428,105.6836,0,22,CO
+Napa Valley,38.5025,122.2654,0,23,CA
+Guggenheim Museum,40.7830,73.9590,0,25,NY
+Catalina Island,33.3879,118.4163,0,26,CA
+Molokai,21.1444,157.0226,0,27,HI
+Santa Monica,34.0195,118.4912,0,28,CA
+Redwood National Park,41.2132,24.0046,0,29,CA
+Golden Gate Bridge,37.8199,122.4783,0,30,CA
+SeaWorld,28.4097,81.4597,0,31,FL
+Horseshoe Bend,36.8791,111.5104,0,32,AZ
+French Quarter,29.9584,90.0644,0,33,LA
+Saint Augustine,29.9012,81.3124,0,34,FL
+Montezuma Castle,34.6116,111.8350,0,35,IN
+Lanikai Beach,21.3925,157.7151,0,36,HI
+Great Smoky Mountains National Park,35.6131,83.5532,0,37,TN
+Chimney Rock,35.4393,82.2465,0,38,NC
+Madison Square Garden,40.7505,73.9934,0,39,NY
+Crater Lake,42.9446,122.1090,0,40,OR
+Dakota Building,40.7765,73.9761,0,41,NY
+Mount Hood National Forest,45.3298,121.7132,0,42,OR
+Isle Royale National Park,47.9959,88.9093,0,43,MI
+Fairmount Park,39.9881,75.1971,0,44,PA
+Wailea Beach,20.6828,156.4430,0,45,HI
+Mono Lake,38.0128,118.9762,0,46,CA
+Central Park,40.7812 ,73.9665,0,47,NY
+Washington Monument,38.8895,77.0353,0,48,DC
+The Pentagon,38.8719,77.0563,0,49,VA
+Beverly Hills,34.0736,118.4004,0,50,CA
+Mesa Verde National Park,37.2309,108.4618,0,51,CO
+Apostle Islands,47.0027,90.6908,0,52,WI
+The White House,38.8977,77.0365,0,53,DC
+The Statue of Liberty,40.6892,74.0445,0,54,NY
+Zion National Park,37.2982,113.0263,0,55,UT
+La Jolla Beach,32.8503,117.2730,0,56,CA
+Field Museum of Natural History,41.8663,87.6170,0,57,IL
+Oneonta Gorge,45.5792,122.0723,0,58,OR
+Mount Rushmore,43.8791,103.4591,0,59,SD
+Hamilton Pool Preserve,30.3423,98.1271,0,60,TX
+Graceland Mansion,35.0477,90.0260,0,61,TN
+Empire State Building,40.7484,73.9857,0,62,NY
+Hollywood,34.0928,118.3287,0,63,CA
+Flatiron Building,40.7411,73.9897,0,64,NY
+Cathedral Basilica of Saint Louis,38.6425,90.2547,0,65,MO
+Atlantic City,39.3643,74.4229,0,66,NJ
+Hawai’i Volcanoes National Park,19.4194,155.2885,0,67,HI
+Savannah,32.0809,81.0912,0,68,GA
+Space Needle,47.6205,122.3493,0,69,WA
+Cannon Beach,45.8918,123.9615,0,70,OR
+Gulf State Park,30.2684,87.6342,0,71,OR
+The Glass Beaches of Fort Bragg,39.4526,123.8135,0,72,CA
+Mount Rainier National Park,46.8800,121.7269,0,73,WA
+Art Deco Historic District Miami Beach,25.7803,80.1304,0,74,FL
+Havasu Creek,34.483696,114.325638,0,75,AZ
+Museum of Modern Art – MoMA,40.7614,73.9776,0,76,NY
+Glacier National Park,48.7596,113.7870,0,77,MO
+Key West,24.5551,81.7800,0,78,FL
+The Gateway Arch St. Louis,38.6247,90.1848,0,79,MI
+Niagara Falls,43.0962,79.0377,0,80,NY
+Arches National Park,38.7331,109.5925,0,81,UT
+Mammoth Cave National Park,37.1862,86.1000,0,82,KY
+Walk of Fame,34.1016,118.3267,0,83,CA
+Alcatraz Island,37.8270,122.4230,0,84,CA
+Antelope Canyon,6.8619,111.3743,0,85,AZ
+Three Pools,44.8390,122.3119,0,86,OR
+Las Vegas Strip,36.1147,115.1728,0,87,NV
+Disneyland,33.8121,117.9190,0,88,CA
+Denali National Park,63.1148,151.1926,0,89,AK
+Emerald Coast,30.3935,86.4958,0,91,FL
+Monument Valley,36.9980,110.0985,0,92,AZ
+Waikiki Beach,21.2793,157.8292,0,93,HI
+Cape Cod,41.6688,70.2962,0,94,MA
+Dry Tortugas National Park,24.6285,82.8732,0,95,FL
+Grand Canyon National Park,36.1069,112.1129,0,96,AZ
+Death Valley,36.5323,116.9325,0,97,CA
+Aspen,39.1911,106.8175,0,98,CO
+White Sands National Monument,32.7872,106.3257,0,99,NM
+Joshua Tree National Park,33.8734,115.9010,0,100,CA
