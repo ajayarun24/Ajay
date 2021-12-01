@@ -17,7 +17,8 @@ void RoadTripGraph::createGraph() {
         for (size_t y = 0; y < locations.size(); y++) {
             
             
-            if (checkNeighbor(locations[x].state, locations[y].neighboringStates) || locations[x].state == locations[y].state) {
+            if (checkNeighbor((locations[x].state, locations[y].neighboringStates) || locations[x].state == locations[y].state)
+            && locations[x].name != locations[y].name) {
                 adjacencyMatrix[x][y] = Calculator::calculateDistance(locations[x].latitude, locations[x].longitude,
                                                                         locations[y].latitude, locations[y].longitude);
                 adjacencyList[x].push_back(&locations[y]);
