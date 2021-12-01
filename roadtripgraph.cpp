@@ -23,6 +23,7 @@ void RoadTripGraph::createGraph() {
                 adjacencyList[x].push_back(&locations[y]);
             } else {
                 adjacencyMatrix[x][y] = -1;
+                adjacencyList[x].push_back(nullptr)  ;
             }
         }
     }

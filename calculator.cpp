@@ -14,3 +14,5 @@ double Calculator::calculateDistance(double lat1, double long1, double lat2, dou
 
     return (radius * c);
 }
+
+
