@@ -5,14 +5,35 @@
 #include <stdlib.h>
 #include "calculator.h"
 #include "roadtripgraph.h"
-
+using std::vector;
 using ::Parsing;
-
+using std::cout;
+using std::endl;
 int main() {
     //Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-    std::cout << "hi" << std::endl;
+
+    for (int i = 0; i < graph.adjacencyList.size(); i++)
+    {
+        cout << i;
+        for (int j = 0; j < graph.adjacencyList[i].size(); j++)
+        {
+            if(!(graph.adjacencyList[i][j] == NULL))
+            {
+            if (j == graph.adjacencyList[i].size() - 1)
+            {
+                cout << " -> " << graph.adjacencyList[i][j]->priority << endl;
+                break;
+            }
+            else
+                cout << " -> " << graph.adjacencyList[i][j]->priority;
+
+            }   
+        }
+        cout << "\n================================================================================== \n " << endl;
+    }
+
     return 0;
 }
 
