@@ -16,10 +16,13 @@ class RoadTripGraph {
 
     bool checkNeighbor(string name, vector<string> neighbors) ;
 
-    
-    vector<vector<double>> adjacencyMatrix;
+    static bool isValidEdge(int u, int v, vector<bool> inMST);
 
-    vector<vector<Parsing::Location*>> adjacencyList;
+    static void primMST(vector<vector<double> > weights);
+
+    vector<vector<double> > adjacencyMatrix;
+
+    vector<vector<Parsing::Location*> > adjacencyList;
 
     vector<Parsing::Location> locations;
 };

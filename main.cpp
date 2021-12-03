@@ -10,12 +10,10 @@ using std::vector;
 using ::Parsing;
 using std::cout;
 using std::endl;
+using ::RoadTripGraph;
 
-static void createEverything()
+static void printAdjMatrix(RoadTripGraph graph)
 {
-    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
-    graph.createGraph();
-
     vector<vector<double> > temp_matrix = graph.adjacencyMatrix;
 
     for (int i = 0; i < (int)graph.adjacencyList.size(); i++)
@@ -42,9 +40,12 @@ static void createEverything()
 
 int main() {
     //Make a graph
-    //createEverything();
-    testing::testParsing();
-    
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    // printAdjMatrix(graph);
+
+    RoadTripGraph::primMST(graph.adjacencyMatrix);
+
     return 0;
 }
 

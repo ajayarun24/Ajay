@@ -2,6 +2,5 @@
 
 class testing{
 public:
-static void testParsing();
-
+    static void testParsing();
 };
