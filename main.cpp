@@ -42,9 +42,9 @@ int main() {
     //Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-    // printAdjMatrix(graph);
+    //printAdjMatrix(graph);
 
-    RoadTripGraph::primMST(graph.adjacencyMatrix);
+    graph.primMST(graph.adjacencyMatrix);
 
     return 0;
 }

@@ -18,7 +18,7 @@ class RoadTripGraph {
 
     static bool isValidEdge(int u, int v, vector<bool> inMST);
 
-    static void primMST(vector<vector<double> > weights);
+    void primMST(vector<vector<double> > weights);
 
     vector<vector<double> > adjacencyMatrix;
 

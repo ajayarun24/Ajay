@@ -9,22 +9,26 @@ RoadTripGraph::RoadTripGraph(string placesFileName, string stateFileName) {
     locations = myParse.diffLocations;
 }
 
-void RoadTripGraph::createGraph() {
+void RoadTripGraph::createGraph()
+{
     adjacencyMatrix.resize(locations.size(), vector<double>(locations.size()));
-    adjacencyList.resize(locations.size(), vector<Parsing::Location*>());
+    adjacencyList.resize(locations.size(), vector<Parsing::Location *>());
 
-    for (size_t x = 0; x < locations.size(); x++) {
-        for (size_t y = 0; y < locations.size(); y++) {
-            
-            
-            if ((checkNeighbor(locations[x].state, locations[y].neighboringStates) || locations[x].state == locations[y].state)
-            && locations[x].name != locations[y].name) {
+    for (size_t x = 0; x < locations.size(); x++)
+    {
+        for (size_t y = 0; y < locations.size(); y++)
+        {
+
+            if ((checkNeighbor(locations[x].state, locations[y].neighboringStates) || locations[x].state == locations[y].state) && locations[x].name != locations[y].name)
+            {
                 adjacencyMatrix[x][y] = Calculator::calculateDistance(locations[x].latitude, locations[x].longitude,
-                                                                        locations[y].latitude, locations[y].longitude);
+                                                                      locations[y].latitude, locations[y].longitude);
                 adjacencyList[x].push_back(&locations[y]);
-            } else {
+            }
+            else
+            {
                 adjacencyMatrix[x][y] = -1;
-                adjacencyList[x].push_back(nullptr)  ;
+                adjacencyList[x].push_back(nullptr);
             }
         }
     }
@@ -67,6 +71,7 @@ void RoadTripGraph::primMST(vector<vector<double> > weights)
                 {
                     if (RoadTripGraph::isValidEdge(i, j, inMST))
                     {
+                
                         min = weights[i][j];
                         a = i;
                         b = j;
@@ -78,6 +83,8 @@ void RoadTripGraph::primMST(vector<vector<double> > weights)
         {
             printf("Edge %d:(%d, %d) cost: %d \n",
                    edge_count++, a, b, min);
+
+            std::cout << locations[a].name << " "  << locations[b].name << " " <<std::endl;
             mincost = mincost + min;
             inMST[b] = inMST[a] = true;
         }
