@@ -4,4 +4,4 @@ class testing{
 public:
 static void testParsing();
 
-}
+};

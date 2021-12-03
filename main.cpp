@@ -5,38 +5,47 @@
 #include <stdlib.h>
 #include "calculator.h"
 #include "roadtripgraph.h"
+#include "testing.h"
 using std::vector;
 using ::Parsing;
 using std::cout;
 using std::endl;
-int main() {
-    //Make a graph
+
+static void createEverything()
+{
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
 
     vector<vector<double> > temp_matrix = graph.adjacencyMatrix;
-    int temp;
 
-    for (int i = 0; i < graph.adjacencyList.size(); i++)
+    for (int i = 0; i < (int)graph.adjacencyList.size(); i++)
     {
         cout << i;
-        for (int j = 0; j < graph.adjacencyList[i].size(); j++)
+        for (int j = 0; j < (int)graph.adjacencyList[i].size(); j++)
         {
-            if(!(graph.adjacencyList[i][j] == NULL))
+            if (!(graph.adjacencyList[i][j] == NULL))
             {
-            if (j == graph.adjacencyList[i].size() - 1)
-            {
-                cout << " -> " << graph.adjacencyList[i][j]->priority << endl;
-                break;
+                if (j == (int)graph.adjacencyList[i].size() - 1)
+                {
+                    cout << " -> " << graph.adjacencyList[i][j]->priority << endl;
+                    break;
+                }
+                else
+                    cout << " -> " << graph.adjacencyList[i][j]->priority;
             }
-            else
-                cout << " -> " << graph.adjacencyList[i][j]->priority;
-
-            }   
         }
         cout << "\n================================================================================== \n " << endl;
     }
+}
 
+
+
+int main() {
+    //Make a graph
+    //createEverything();
+    testing::testParsing();
+    
     return 0;
 }
+
 
