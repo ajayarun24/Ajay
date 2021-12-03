@@ -14,6 +14,9 @@ int main() {
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
 
+    vector<vector<double> > temp_matrix = graph.adjacencyMatrix;
+    int temp;
+
     for (int i = 0; i < graph.adjacencyList.size(); i++)
     {
         cout << i;
