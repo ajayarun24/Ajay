@@ -23,7 +23,7 @@ void RoadTripGraph::createGraph() {
                                                                         locations[y].latitude, locations[y].longitude);
                 adjacencyList[x].push_back(&locations[y]);
             } else {
-                adjacencyMatrix[x][y] = -1;
+                adjacencyMatrix[x][y] = std::numeric_limits<int>::max();
                 adjacencyList[x].push_back(nullptr);
             }
         }
