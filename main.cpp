@@ -18,7 +18,6 @@ int main() {
 
     graph.createGraph();
 
-
     return 0;
 }
 

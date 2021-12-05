@@ -16,7 +16,8 @@ class RoadTripGraph {
 
     bool checkNeighbor(string name, vector<string> neighbors) ;
 
-    
+    static vector<int> BFS(vector<vector<double>> adjacencyMatrix,  vector<vector<Parsing::Location*>> adjacencyList);
+
     vector<vector<double>> adjacencyMatrix;
 
     vector<vector<Parsing::Location*>> adjacencyList;
