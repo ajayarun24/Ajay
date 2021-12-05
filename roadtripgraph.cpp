@@ -13,14 +13,6 @@ void RoadTripGraph::createGraph() {
     adjacencyMatrix.resize(locations.size(), vector<double>(locations.size()));
     adjacencyList.resize(locations.size(), vector<Parsing::Location*>());
 
-    /*for (Parsing::Location l: locations) {
-        std::cout<<l.name<< " "<<std::endl;
-        for (string neigh: l.neighboringStates) {
-            std::cout<<neigh<<std::endl;
-        }
-        std::cout<<" "<<std::endl;
-    }*/
-
     for (size_t x = 0; x < locations.size(); x++) {
         for (size_t y = 0; y < locations.size(); y++) {
             
@@ -31,16 +23,11 @@ void RoadTripGraph::createGraph() {
                                                                         locations[y].latitude, locations[y].longitude);
                 adjacencyList[x].push_back(&locations[y]);
             } else {
-                adjacencyMatrix[x][y] = std::numeric_limits<int>::max();
+                adjacencyMatrix[x][y] = -1;
                 adjacencyList[x].push_back(nullptr);
             }
         }
     }
-    for (int i = 60; i < 80; i++) {
-        for (int y = 0; y < 98; y++) {
-            std::cout<<adjacencyMatrix[i][y]<<" "<<locations[i].name<<" "<<locations[y].name<<std::endl;
-        }
-}   
 }
 
 
