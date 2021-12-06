@@ -84,7 +84,7 @@ void RoadTripGraph::primMST(vector<vector<double> > weights)
             printf("Edge %d:(%d, %d) cost: %d \n",
                    edge_count++, a, b, min);
 
-            std::cout << locations[a].name << " "  << locations[b].name << " " <<std::endl;
+            std::cout << locations[a].name << " Second Place: "  << locations[b].name << " " <<std::endl;
             mincost = mincost + min;
             inMST[b] = inMST[a] = true;
         }

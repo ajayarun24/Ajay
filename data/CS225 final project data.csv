@@ -4,7 +4,6 @@ Yellowstone National Park,44.4280,110.5885,0,3,WY
 San Antonio Missions National Historical Park,29.3604,98.4792,0,4,TX
 Times Square,40.7580,73.9855,0,5,NY
 Pictured Rocks National Lakeshore,46.5216,86.4551,0,6,MI
-Kauai,22.0964,159.5261,0,7,HI
 Beacon Hill,42.3588,71.0707,0,8,MA
 Valley of Fire State Park,36.5073,114.5352,0,9,NV
 The Wave,37.0424,112.5122,0,10,AZ
@@ -15,15 +14,12 @@ Devils Tower,44.5902,104.7146,0,14,WY
 Olympic National Park,47.8021,123.6044,0,15,WA
 Brooklyn Bridge,40.7061,73.9969,0,16,NY
 Malibu,34.0259,118.7798,0,17,CA
-Misty Fjords National Monument,55.3718,130.3626,0,18,AK
-Lahaina,20.8783,156.6825,0,19,HI
 Chrysler Building,40.7516,73.9755,0,20,NY
 Venice Beach,33.9850,118.4695,0,21,CA
 Rocky Mountains National Park,40.3428,105.6836,0,22,CO
 Napa Valley,38.5025,122.2654,0,23,CA
 Guggenheim Museum,40.7830,73.9590,0,25,NY
 Catalina Island,33.3879,118.4163,0,26,CA
-Molokai,21.1444,157.0226,0,27,HI
 Santa Monica,34.0195,118.4912,0,28,CA
 Redwood National Park,41.2132,24.0046,0,29,CA
 Golden Gate Bridge,37.8199,122.4783,0,30,CA
@@ -32,7 +28,6 @@ Horseshoe Bend,36.8791,111.5104,0,32,AZ
 French Quarter,29.9584,90.0644,0,33,LA
 Saint Augustine,29.9012,81.3124,0,34,FL
 Montezuma Castle,34.6116,111.8350,0,35,IN
-Lanikai Beach,21.3925,157.7151,0,36,HI
 Great Smoky Mountains National Park,35.6131,83.5532,0,37,TN
 Chimney Rock,35.4393,82.2465,0,38,NC
 Madison Square Garden,40.7505,73.9934,0,39,NY
@@ -41,7 +36,6 @@ Dakota Building,40.7765,73.9761,0,41,NY
 Mount Hood National Forest,45.3298,121.7132,0,42,OR
 Isle Royale National Park,47.9959,88.9093,0,43,MI
 Fairmount Park,39.9881,75.1971,0,44,PA
-Wailea Beach,20.6828,156.4430,0,45,HI
 Mono Lake,38.0128,118.9762,0,46,CA
 Central Park,40.7812 ,73.9665,0,47,NY
 Washington Monument,38.8895,77.0353,0,48,DC
@@ -63,7 +57,6 @@ Hollywood,34.0928,118.3287,0,63,CA
 Flatiron Building,40.7411,73.9897,0,64,NY
 Cathedral Basilica of Saint Louis,38.6425,90.2547,0,65,MO
 Atlantic City,39.3643,74.4229,0,66,NJ
-Hawai’i Volcanoes National Park,19.4194,155.2885,0,67,HI
 Savannah,32.0809,81.0912,0,68,GA
 Space Needle,47.6205,122.3493,0,69,WA
 Cannon Beach,45.8918,123.9615,0,70,OR
@@ -85,10 +78,8 @@ Antelope Canyon,6.8619,111.3743,0,85,AZ
 Three Pools,44.8390,122.3119,0,86,OR
 Las Vegas Strip,36.1147,115.1728,0,87,NV
 Disneyland,33.8121,117.9190,0,88,CA
-Denali National Park,63.1148,151.1926,0,89,AK
 Emerald Coast,30.3935,86.4958,0,91,FL
 Monument Valley,36.9980,110.0985,0,92,AZ
-Waikiki Beach,21.2793,157.8292,0,93,HI
 Cape Cod,41.6688,70.2962,0,94,MA
 Dry Tortugas National Park,24.6285,82.8732,0,95,FL
 Grand Canyon National Park,36.1069,112.1129,0,96,AZ
