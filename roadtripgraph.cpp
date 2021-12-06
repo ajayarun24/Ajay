@@ -53,14 +53,19 @@ bool RoadTripGraph::isValidEdge(int u, int v, vector<bool> inMST){
     return true;
 }
 
-void RoadTripGraph::primMST(vector<vector<double> > weights)
+vector<Parsing::Location> RoadTripGraph::primMST(vector<vector<double> > weights)
 {
+    vector<Parsing::Location> TraversalList ;
+    vector<int> Nodes(88,-1);
     int V = weights[0].size() ;
+    Nodes[0] = 1 ;
+    TraversalList.push_back(locations[0]);
+
     vector<bool> inMST(V,false);
     inMST[0] = true;
     int edge_count = 0, mincost = 0;
 
-    while (edge_count < V - 1)
+    while (edge_count < V-1)
     {
         int min = INT_MAX, a = -1, b = -1;
         for (int i = 0; i < V; i++)
@@ -71,7 +76,6 @@ void RoadTripGraph::primMST(vector<vector<double> > weights)
                 {
                     if (RoadTripGraph::isValidEdge(i, j, inMST))
                     {
-                
                         min = weights[i][j];
                         a = i;
                         b = j;
@@ -87,7 +91,17 @@ void RoadTripGraph::primMST(vector<vector<double> > weights)
             std::cout << locations[a].name << " Second Place: "  << locations[b].name << " " <<std::endl;
             mincost = mincost + min;
             inMST[b] = inMST[a] = true;
+
+            if(Nodes[a] == -1 ){
+                TraversalList.push_back(locations[a]);
+                Nodes[a] = 1;
+            }
+            if (Nodes[b] == -1){
+                TraversalList.push_back(locations[b]);
+                Nodes[b] = 1;
+            }
         }
     }
     printf("\n Minimum cost= %d \n", mincost);
+    return TraversalList;
 }

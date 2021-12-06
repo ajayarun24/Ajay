@@ -36,13 +36,28 @@ static void printAdjMatrix(RoadTripGraph graph)
     }
 }
 
+static vector<vector<double> > testPrims(){
+    vector<vector<double> > tester;
+    vector<double> one, two, three, four, five;
+    one.insert(one.end(), {-1, 2, -1, 6, -1});
+    two.insert(two.end(), {2, -1, 3, 8, 5});
+    three.insert(three.end(), {-1, 3, -1, -1, 7});
+    four.insert(four.end(), {6, 8, -1, -1, 9});
+    five.insert(five.end(), {-1, 5, 7, 9, -1});
+
+    tester.insert(tester.end(), {one, two, three, four, five});
+    
+    return tester;
+}
+
 
 
 int main() {
     //Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-    graph.primMST(graph.adjacencyMatrix);
+    //printAdjMatrix(graph);
+    vector<Parsing::Location> temp =  graph.primMST(graph.adjacencyMatrix);
 
     return 0;
 }
