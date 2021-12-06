@@ -34,6 +34,8 @@ void RoadTripGraph::createGraph()
     }
 }
 
+
+
 bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
     for (string n: neighbors) {
         if (name == n) {
