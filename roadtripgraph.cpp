@@ -44,10 +44,15 @@ bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
     return false;
 }
 
-void RoadTripGraph::KruskalsMST()
+vector<Parsing::Location> RoadTripGraph::KruskalsMST()
 {
     std::cout << "========================================================================= " << std::endl;
     std::cout << " The minimum spanning tree for the current attractions has the following edges" << std::endl;
+    vector<Parsing::Location> VisitedPlaces;
+    vector<bool> isVisited(adjacencyMatrix[0].size(),false);
+    VisitedPlaces.push_back(locations[0]);
+    isVisited[0]=true;
+
     vector<vector<double> > weights = adjacencyMatrix;
     int V = weights[0].size();
     parent.resize(V);
@@ -77,10 +82,21 @@ void RoadTripGraph::KruskalsMST()
         union1(a, b);
         printf("Edge %d:(%d, %d) cost:%f \n",
                edge_count++, a, b, min);
+        if(!isVisited[a]){
+            VisitedPlaces.push_back(locations[a]);
+            isVisited[a]=true;
+        }
+        if (!isVisited[b])
+        {
+            VisitedPlaces.push_back(locations[b]);
+            isVisited[b] = true;
+        }
+
         mincost += min;
     }
     printf("\n The minumum distance in KM = %f \n", mincost);
     std::cout << "========================================================================= " << std::endl;
+    return VisitedPlaces;
 }
 
 void RoadTripGraph::union1(int i, int j)
