@@ -58,7 +58,7 @@ int main() {
     graph.createGraph();
     //graph.KruskalsMST();
 
-    graph.BFS(6, 7);
+    graph.printBFS(6, 7);
 
 
 

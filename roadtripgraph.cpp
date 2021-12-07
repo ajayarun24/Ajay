@@ -93,7 +93,7 @@ int RoadTripGraph::find(int i)
     return i;
 }
 
-void RoadTripGraph::BFS(int start, int end) {
+vector<Parsing::Location> RoadTripGraph::BFS(int start, int end) {
     vector<bool> visited(locations.size());
 
     vector<Parsing::Location> l;
@@ -153,7 +153,11 @@ void RoadTripGraph::BFS(int start, int end) {
 }
 
 void RoadTripGraph::printBFS(int start, int end) {
+
+    vector<Parsing::Location> path = BFS(start, end);
     for (size_t i = 0; i < path.size(); i++) {
         std::cout<<path[i].name<<", "<<path[i].state<<std::endl;
     }
+
+    
 }
