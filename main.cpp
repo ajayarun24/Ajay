@@ -57,7 +57,7 @@ int main() {
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
     //printAdjMatrix(graph);
-    vector<Parsing::Location> temp =  graph.primMST(graph.adjacencyMatrix);
+    graph.KruskalsMST();
 
     return 0;
 }

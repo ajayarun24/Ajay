@@ -16,9 +16,12 @@ class RoadTripGraph {
 
     bool checkNeighbor(string name, vector<string> neighbors) ;
 
-    static bool isValidEdge(int u, int v, vector<bool> inMST);
+    void KruskalsMST();
 
-    vector<Parsing::Location> primMST(vector<vector<double> > weights);
+    void union1 (int i, int j);
+
+    int find(int i);
+
 
     vector<vector<double> > adjacencyMatrix;
 
@@ -26,5 +29,5 @@ class RoadTripGraph {
 
     vector<Parsing::Location> locations;
 
-
+    vector<int> parent;
 };
