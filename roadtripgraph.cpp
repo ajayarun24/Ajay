@@ -46,6 +46,8 @@ bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
 
 void RoadTripGraph::KruskalsMST()
 {
+    std::cout << "========================================================================= " << std::endl;
+    std::cout << " The minimum spanning tree for the current attractions has the following edges" << std::endl;
     vector<vector<double> > weights = adjacencyMatrix;
     int V = weights[0].size();
     parent.resize(V);
@@ -77,7 +79,8 @@ void RoadTripGraph::KruskalsMST()
                edge_count++, a, b, min);
         mincost += min;
     }
-    printf("\n Minimum cost= %f \n", mincost);
+    printf("\n The minumum distance in KM = %f \n", mincost);
+    std::cout << "========================================================================= " << std::endl;
 }
 
 void RoadTripGraph::union1(int i, int j)
@@ -140,8 +143,6 @@ vector<Parsing::Location> RoadTripGraph::BFS(int start, int end) {
 
     vector<Parsing::Location> path;
 
-    
-
     int num = end;
     
     while (pred[num] != -1) {
@@ -154,16 +155,14 @@ vector<Parsing::Location> RoadTripGraph::BFS(int start, int end) {
 }
 
 void RoadTripGraph::printBFS(int start, int end) {
-string temp1 = locations[start].state ;
-string temp2 = locations[end].state;
-temp1.pop_back();
-temp2.pop_back();
+    string temp1 = locations[start].state ;
+    string temp2 = locations[end].state;
+    temp1.pop_back();
+    temp2.pop_back();
 
-
-std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route with the least attractions "<<std::endl;
+    std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route with the least attractions "<<std::endl;
     vector<Parsing::Location> path = BFS(start, end);
     static int counter = 1;
-
     for (Parsing::Location i: path)
     {
         std::stringstream ss;
@@ -174,4 +173,5 @@ std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route 
         counter++;
         std::cout << temp; 
     }
+    std::cout << "========================================================================= " << std::endl;
 }
