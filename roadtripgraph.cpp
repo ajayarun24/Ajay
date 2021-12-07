@@ -34,8 +34,6 @@ void RoadTripGraph::createGraph()
     }
 }
 
-
-
 bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
     for (string n: neighbors) {
         if (name == n) {
@@ -157,9 +155,20 @@ vector<Parsing::Location> RoadTripGraph::BFS(int start, int end) {
 void RoadTripGraph::printBFS(int start, int end) {
 
     vector<Parsing::Location> path = BFS(start, end);
-    for (size_t i = 0; i < path.size(); i++) {
+    /*for (size_t i = 0; i < path.size(); i++) {
         std::cout<<path[i].name<<", "<<path[i].state<<std::endl;
+        //std::cout<<" ->"<<std::endl;
+    }*/
+
+    for (auto i: path) {
+         // changes to 'i' will now also change the
+             // element in 'path' itself to that value
+        string name = i.name;
+        string state = i.state;
+        std::cout << name << state;
     }
 
-    
+
+
+
 }
