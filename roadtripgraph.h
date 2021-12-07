@@ -22,7 +22,6 @@ class RoadTripGraph {
 
     int find(int i);
 
-
     vector<vector<double> > adjacencyMatrix;
 
     vector<vector<Parsing::Location*> > adjacencyList;

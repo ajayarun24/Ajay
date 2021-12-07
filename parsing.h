@@ -17,18 +17,17 @@ class Parsing{
     {
         string name;
         double latitude, longitude;
-        int costFactor, priority;
+        int priority;
         string state;
         vector<string> neighboringStates;
 
-        Location(string Name, double lat, double longi, int CostFactor, int Priotity, string StateN)
+        Location(string Name, double lat, double longi, int priorityR, string StateN)
         {
             name = Name;
             latitude = lat;
             longitude = longi;
-            costFactor = CostFactor;
-            priority = Priotity;
             state = StateN;
+            priority = priorityR;
         }
     };
     //Empty constructor doesnt do anything 
