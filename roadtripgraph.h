@@ -18,6 +18,10 @@ class RoadTripGraph {
 
     void KruskalsMST();
 
+    vector<Parsing::Location> BFS(int start, int end);
+
+    void printBFS(int start, int end);
+
     void union1 (int i, int j);
 
     int find(int i);

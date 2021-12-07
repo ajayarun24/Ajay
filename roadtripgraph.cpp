@@ -92,3 +92,68 @@ int RoadTripGraph::find(int i)
         i = parent[i];
     return i;
 }
+
+void RoadTripGraph::BFS(int start, int end) {
+    vector<bool> visited(locations.size());
+
+    vector<Parsing::Location> l;
+    vector<Parsing::Location> p;
+    vector<int> distance(locations.size());
+    vector<int> pred(locations.size());
+
+    for (size_t i = 0; i < locations.size(); i++) {
+        visited[i] = false;
+        distance[i] = -1;
+        pred[i] = -1;
+    }
+    
+
+    visited[start] = true;
+    distance[start] = 0;
+
+    l.push_back(locations[start]);
+    p.push_back(locations[start]);
+
+    while (!l.empty())
+    {
+        Parsing::Location t = l[0];
+        l.erase(l.begin());
+
+        // priority should just be priority of the one at the fron
+
+        size_t priority = t.priority;
+
+        for (size_t i = 0; i < locations.size(); i++)
+        {
+
+            if (adjacencyMatrix[i][priority] >= 0 && !visited[i])
+            {
+                visited[i] = true;
+                distance[i] = distance[priority] + 1;
+                pred[i] = priority;
+                p.push_back(locations[i]);
+                l.push_back(locations[i]);
+            }
+        }
+    }
+
+    vector<Parsing::Location> path;
+
+    
+
+    int num = end;
+    
+    while (pred[num] != -1) {
+        path.insert(path.begin(), locations[num]);
+        num = pred[num];
+    }
+    path.insert(path.begin(), locations[start]);
+
+    return path;
+}
+
+void RoadTripGraph::printBFS(int start, int end) {
+    for (size_t i = 0; i < path.size(); i++) {
+        std::cout<<path[i].name<<", "<<path[i].state<<std::endl;
+    }
+}
