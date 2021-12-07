@@ -5,15 +5,17 @@
 
 using std::vector;
 
-    BreadthFirstSearch(vector<vector<double>> aM,vector<vector<Parsing::Location*>> aL,
-    vector<Parsing::Location> l);
+class BreadthFirstSearch
+{
+public:
+    BreadthFirstSearch(vector<vector<double> > aM, vector<vector<Parsing::Location *> > aL,
+                       vector<Parsing::Location> l);
 
     vector<Parsing::Location> doBFS(int start);
 
-    vector<vector<double>> adjacencyMatrix;
+    vector<vector<double> > adjacencyMatrix;
 
-    vector<vector<Parsing::Location*>> adjacencyList;
+    vector<vector<Parsing::Location *> > adjacencyList;
 
     vector<Parsing::Location> locations;
-
 };
