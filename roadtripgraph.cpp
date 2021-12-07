@@ -154,12 +154,24 @@ vector<Parsing::Location> RoadTripGraph::BFS(int start, int end) {
 }
 
 void RoadTripGraph::printBFS(int start, int end) {
+string temp1 = locations[start].state ;
+string temp2 = locations[end].state;
+temp1.pop_back();
+temp2.pop_back();
 
+
+std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route with the least attractions "<<std::endl;
     vector<Parsing::Location> path = BFS(start, end);
+    static int counter = 1;
 
     for (Parsing::Location i: path)
     {
-        std::cout << " -> " <<  i.name <<  ", " << i.state << std::endl ;
+        std::stringstream ss;
+        ss << counter;
+        string str = ss.str();
 
+        string temp = str + " -> " +  i.name + ", " + i.state + "\n" ;
+        counter++;
+        std::cout << temp; 
     }
 }
