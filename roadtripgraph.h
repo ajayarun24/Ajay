@@ -16,10 +16,17 @@ class RoadTripGraph {
 
     bool checkNeighbor(string name, vector<string> neighbors) ;
 
-    
-    vector<vector<double>> adjacencyMatrix;
+    void KruskalsMST();
 
-    vector<vector<Parsing::Location*>> adjacencyList;
+    void union1 (int i, int j);
+
+    int find(int i);
+
+    vector<vector<double> > adjacencyMatrix;
+
+    vector<vector<Parsing::Location*> > adjacencyList;
 
     vector<Parsing::Location> locations;
+
+    vector<int> parent;
 };
