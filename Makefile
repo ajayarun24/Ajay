@@ -16,7 +16,7 @@ $(EXENAME) : output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
 #object file dependncies
-main.o : main.cpp roadtripgraph.cpp roadtripgraph.h parsing.h parsing.cpp calculator.h calculator.cpp testing.h testing.cpp bfs.o
+main.o : main.cpp roadtripgraph.cpp roadtripgraph.h parsing.h parsing.cpp calculator.h calculator.cpp testing.h testing.cpp
 	$(CXX) $(CXXFLAGS) main.cpp
 
 roadtripgraph.o : roadtripgraph.cpp roadtripgraph.h 
@@ -30,9 +30,6 @@ calculator.o : calculator.h calculator.cpp
 
 testing.o : parsing.h parsing.cpp testing.h testing.cpp 
 	$(CXX) $(CXXFLAGS) testing.cpp
-
-bfs.o : bfs.h bfs.cpp
-	$(CXX) $(CXXFLAGS) bfs.cpp
 
 # Custom Clang version enforcement Makefile rule:
 # for using 'make test'
