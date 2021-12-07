@@ -29,4 +29,6 @@ class RoadTripGraph {
     vector<Parsing::Location> locations;
 
     vector<int> parent;
+
+    
 };
