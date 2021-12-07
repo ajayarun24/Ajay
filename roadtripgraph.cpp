@@ -50,8 +50,6 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST()
     std::cout << " The minimum spanning tree for the current attractions has the following edges" << std::endl;
     vector<Parsing::Location> VisitedPlaces;
     vector<bool> isVisited(adjacencyMatrix[0].size(),false);
-    VisitedPlaces.push_back(locations[0]);
-    isVisited[0]=true;
 
     vector<vector<double> > weights = adjacencyMatrix;
     int V = weights[0].size();
