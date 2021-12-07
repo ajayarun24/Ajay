@@ -6,6 +6,8 @@ CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
 LD = clang++
 LDFLAGS = -std=c++1y -stdlib=libc++ -lc++abi -lm
 
+include cs225/make/cs225.mk
+
 all : $(EXENAME)
 
 output_msg: ; $(CLANG_VERSION_MSG)
@@ -14,7 +16,7 @@ $(EXENAME) : output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
 #object file dependncies
-main.o : main.cpp roadtripgraph.cpp roadtripgraph.h parsing.h parsing.cpp calculator.h calculator.cpp testing.h testing.cpp
+main.o : main.cpp roadtripgraph.cpp roadtripgraph.h parsing.h parsing.cpp calculator.h calculator.cpp testing.h testing.cpp bfs.o
 	$(CXX) $(CXXFLAGS) main.cpp
 
 roadtripgraph.o : roadtripgraph.cpp roadtripgraph.h 
@@ -28,6 +30,9 @@ calculator.o : calculator.h calculator.cpp
 
 testing.o : parsing.h parsing.cpp testing.h testing.cpp 
 	$(CXX) $(CXXFLAGS) testing.cpp
+
+bfs.o : bfs.h bfs.cpp
+	$(CXX) $(CXXFLAGS) bfs.cpp
 
 # Custom Clang version enforcement Makefile rule:
 # for using 'make test'

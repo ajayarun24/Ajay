@@ -5,7 +5,6 @@
 
 using std::vector;
 
-class BreadthFirstSearch {
     BreadthFirstSearch(vector<vector<double>> aM,vector<vector<Parsing::Location*>> aL,
     vector<Parsing::Location> l);
 

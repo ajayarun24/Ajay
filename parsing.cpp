@@ -14,24 +14,20 @@ void Parsing::fillVector(string placesFileName){
         std::cout << "Failed to open File" << std::endl;
     }
 
-    string name, latitude, longitude, costFactor,prioity, state;
+    string name, latitude, longitude, state;
      
-
+    int currPriority = 0;
     while(fin.good()){
         getline(fin, name,',');
         getline(fin, latitude, ',');
         getline(fin, longitude, ',');
-        getline(fin, costFactor, ',');       
-        getline(fin, prioity, ',');
         getline(fin, state, '\n');
 
         double lat = std::atof(latitude.c_str());
         double longi = std::atof(longitude.c_str());
-        std::stringstream temp1(prioity);
-        int x = 0;
-        temp1 >> x;
-
-        Location temp(name,lat,longi,0,x,state);
+ 
+        Location temp(name,lat,longi, currPriority, state);
+        currPriority++;
         diffLocations.push_back(temp);
         
     }

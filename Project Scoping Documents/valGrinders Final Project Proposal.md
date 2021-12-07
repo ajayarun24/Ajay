@@ -32,21 +32,13 @@ locations, we will download the data from
 
 this article into an excel spreadsheet with the destination’s name, location(longitude and
 
-latitude), and average cost of visiting of that city. We will get the average cost of living
-
-<https://meric.mo.gov/data/cost-living-data-series>[ ](https://meric.mo.gov/data/cost-living-data-series)specifically the housing cost because that is
-
-what travelers have to worry about. Once this data is into the excel spreadsheet we will convert it
+latitude), and average cost of visiting of that city. Once this data is into the excel spreadsheet we will convert it
 
 into a csv file to make it easily parseable. We will parse this data against a map of the United
 
 States, and given an input starting and stopping point, develop an algorithm to create the quickest
 
-route with the best sight-seeing locations and the total cost of the trip. Some potential missing
-
-entries could be a housing cost, but since we are the ones creating the dataset we can find our
-
-data from multiple sources to fill the missing information. The most important information to
+route with the best sight-seeing locations. The most important information to
 
 build our graph will be the distance which we can get for all data points using map software,
 
@@ -57,10 +49,6 @@ meaning there can be no errors on it.
 Our road trip planner algorithm will take in two graph data algorithms: it will firstly
 
 construct a map of our desired region (the United States) by identifying which state will be
-
-
-
-
 
 connected to the previous state with their edges based on their bordering state options (Prim’s
 
@@ -78,17 +66,13 @@ Prim’s algorithm is formulaically O(Elog(V)) where E is the number of edges (1
 
 the number of vertices.
 
-We will traverse these two graph data algorithms using a Depth-First Search (DFS), to
+We will traverse the graph using a Breadth-First Search (BFS), to
 
-take in a starting point, ending point, and budget input, and output the most efficient (shortest)
+take in a starting point, ending point, and output the most efficient (shortest)
 
-route to get from point A to point B, which tourist locations will be visited along the way, and
+route to get from point A to point B, which tourist locations will be visited along the way. The DFS starts at the root node and
 
-how much over/under the proposed budget the trip will be. The DFS starts at the root node and
-
-explores as far as possible along each branch before backtracking in left-right order The expected
-
-runtime for our DFS search will be O(n) as in any DFS.
+explores adjacent nodes. The expected runtime for our BFS search will be O(E + V) as in any BFS.
 
 We will use Dijkstra’s Algorithm to find the shortest route, and we will use a DFS to
 

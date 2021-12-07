@@ -1,0 +1,18 @@
+Start 12/5 We met this week to discuss progress made in the previous week, understand and finalize connections between each of our distinct workstreams, and develop a timeline to complete the project as we enter the final week.
+
+Last week update: We now have made significant progess towards completing our 3 algorithms: Prims, BFS, and Djstrikas, and are now currently creating test suites to incportate with I/O. Additionally, we sent an email to our prjoect advisor outlining project changes/updates discussed in our midpoint check-in meeting. 
+
+We then divided work for our next week:
+
+Sarthak will be adjusting Prims algorithm and creating a test suite to ensure accuracy of algorithm in regards to I/O of project.
+Jaylen will be using the PNG class to display a minimum spanning tree of the vector of locations returned from Djstrikas algorithm, a list of tourist locations to vist along the path from one input state to another. 
+Pranav will be testing the BFS search algorithm, print the BFS path in the terminal, test the adjacency matrix, and review other algorithms in our project pipeline. 
+Ajay will be working towards completing Djstrikas algorithm, creating a test suite, and printing the output of locations to the terminal.
+
+Lastly, as a team, we plan to use the output generated from each algorithm or function as the input for the next function in our project timeline to ensure our project works as intended given we previously used test data. 
+
+As we quickly approach the final steps of developing our algorithms, it is equally important to begin our written report as well as our video presentation. The team has appropriately divided up tasks to complete the written report, including initial goals of the problem, how we approached and solved the problem, andd our final deliverable. 
+
+Upon completion of our final written report, as a team we will record a video presention of ourselves demonstrating our project while also including considerations mentioned in our written report. 
+
+----------------------------------------------------------------------- END: 12/9
