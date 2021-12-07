@@ -54,7 +54,7 @@ void RoadTripGraph::KruskalsMST()
         parent[i] = i;
 
     int edge_count = 0;
-    while (edge_count < V-3)
+    while (edge_count < V-1)
     {
         double min = INT_MAX;
         int a = -1, b = -1;

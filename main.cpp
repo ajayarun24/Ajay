@@ -56,9 +56,9 @@ int main() {
     //Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-    //printAdjMatrix(graph);
     graph.KruskalsMST();
 
+    
     return 0;
 }
 
