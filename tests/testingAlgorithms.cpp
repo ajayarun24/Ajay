@@ -12,7 +12,7 @@ using ::Parsing;
 
 TEST_CASE("test_basic_fileio", "[fileio]")
 {
-    bool firstTest = true, secondTest = true;
+    bool firstTest = true ;
     Parsing tester;
     tester.fillVector("data/CS225 final project data.csv");
     vector<Parsing::Location> temp = tester.diffLocations;
@@ -25,13 +25,32 @@ TEST_CASE("test_basic_fileio", "[fileio]")
     file.close();
     if (!((int)temp.size() == rows)) { firstTest = false;}
 
-    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
-    graph.createGraph();
-    vector<Parsing::Location> i = graph.KruskalsMST();
-    graph.printBFS(95, 96);
-    graph.printDijkstra(1, 14);
+    // RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    // graph.createGraph();
+    // vector<Parsing::Location> i = graph.KruskalsMST();
+    // graph.printBFS(95, 96);
+    // graph.printDijkstra(1, 14);
 
 
     REQUIRE(firstTest);
+    REQUIRE(temp.size()>0);
+    REQUIRE(rows>0);
 }
 
+TEST_CASE("Test_Neihboring_States","[fileio]"){
+    bool secondTest = true;
+    Parsing tester;
+    tester.fillVector("data/CS225 final project data.csv");
+    tester.fillNeighboringStates("data/neighbors-states.csv");
+    vector<Parsing::Location> temp = tester.diffLocations;
+
+    for (Parsing::Location hi : temp)
+    {
+        for (string lol : hi.neighboringStates)
+            if (lol == hi.state)
+            {
+                secondTest = false;
+            }
+    }
+   REQUIRE(secondTest);
+}
