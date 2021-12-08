@@ -10,11 +10,7 @@ using ::RoadTripGraph;
 using ::Parsing;
 
 TEST_CASE("Run input code", "[fileio"){
-     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
-     graph.createGraph();
-     vector<Parsing::Location> i = graph.KruskalsMST();
-     graph.printBFS(95, 96);
-     graph.printDijkstra(1, 14);
+
 
 }
 
