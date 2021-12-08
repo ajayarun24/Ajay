@@ -1,8 +1,12 @@
-.objs/roadtripgraph.o: roadtripgraph.cpp roadtripgraph.h parsing.h \
-  calculator.h
+.objs/roadtripgraph.o: roadtripgraph.cpp roadtripgraph.h cs225/PNG.h \
+  cs225/HSLAPixel.h calculator.h parsing.h
 
 roadtripgraph.h:
 
-parsing.h:
+cs225/PNG.h:
+
+cs225/HSLAPixel.h:
 
 calculator.h:
+
+parsing.h:
