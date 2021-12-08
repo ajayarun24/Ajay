@@ -40,9 +40,7 @@ static void printAdjMatrix(RoadTripGraph graph)
 
 int main() {
     //Make a graph
-    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
-    graph.createGraph();
-    vector<Parsing::Location> i = graph.KruskalsMST();
+
     return 0;
 }
 

@@ -5,9 +5,11 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
-
+#include "../roadtripgraph.h"
+using ::RoadTripGraph;
 using ::Parsing;
+
+
 TEST_CASE("test_basic_fileio", "[fileio]")
 {
     bool firstTest = true, secondTest = true;
@@ -23,5 +25,13 @@ TEST_CASE("test_basic_fileio", "[fileio]")
     file.close();
     if (!((int)temp.size() == rows)) { firstTest = false;}
 
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    vector<Parsing::Location> i = graph.KruskalsMST();
+    graph.printBFS(95, 96);
+    graph.printDijkstra(1, 14);
+
+
     REQUIRE(firstTest);
 }
+
