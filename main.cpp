@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include "calculator.h"
 #include "roadtripgraph.h"
-#include "testing.h"
 using std::vector;
 using ::Parsing;
 using std::cout;
@@ -40,6 +39,13 @@ static void printAdjMatrix(RoadTripGraph graph)
 
 int main() {
     //Make a graph
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    vector<Parsing::Location> i = graph.KruskalsMST();
+    graph.printBFS(95, 96);
+    graph.printDijkstra(1, 14);
+
+    cout << "\n================================================================================== \n " << endl;
 
     return 0;
 }
