@@ -9,6 +9,14 @@
 using ::RoadTripGraph;
 using ::Parsing;
 
+TEST_CASE("Run input code", "[fileio"){
+     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+     graph.createGraph();
+     vector<Parsing::Location> i = graph.KruskalsMST();
+     graph.printBFS(95, 96);
+     graph.printDijkstra(1, 14);
+
+}
 
 TEST_CASE("test_basic_fileio", "[fileio]")
 {
@@ -24,13 +32,6 @@ TEST_CASE("test_basic_fileio", "[fileio]")
 
     file.close();
     if (!((int)temp.size() == rows)) { firstTest = false;}
-
-    // RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
-    // graph.createGraph();
-    // vector<Parsing::Location> i = graph.KruskalsMST();
-    // graph.printBFS(95, 96);
-    // graph.printDijkstra(1, 14);
-
 
     REQUIRE(firstTest);
     REQUIRE(temp.size()>0);
