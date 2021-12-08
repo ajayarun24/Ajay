@@ -33,6 +33,8 @@ class RoadTripGraph {
     vector<Parsing::Location> locations;
 
     vector<int> parent;
-
     
+    std::pair<vector<Parsing::Location>, double> Dijkstra(int start, int end);
+
+    void printDijkstra(int start, int end);
 };
