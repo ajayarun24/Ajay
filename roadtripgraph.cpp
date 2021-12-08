@@ -333,21 +333,21 @@ void RoadTripGraph::addPoints(PNG image, std::vector<Parsing::Location> attracti
 }
 
 
-void addLines(PNG image, std::vector<Parsing::Location> attractions) {
+void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractions) {
     HSLAPixel *myPixel2 = new HSLAPixel(360, 0.8, 0.0);
     RoadTripGraph::addPoints(image, attractions);
     //HSLAPixel* myPixel2 = color2;
     for (size_t i = 0; i < attractions.size() - 1; i++) {
         unsigned point1_lat = attractions[i].latitude;
         unsigned point1_longi = attractions[i].longitude;
-        unsigned point1_x = (Calculator::coordToPixel(point1_longi, point1_lat)).first();
-        unsigned point1_y = (Calculator::coordToPixel(point1_longi, point1_lat)).second();
+        unsigned point1_x = (Calculator::coordToPixel(point1_longi, point1_lat)).first;
+        unsigned point1_y = (Calculator::coordToPixel(point1_longi, point1_lat)).second;
         HSLAPixel& pixel1 = image.getPixel(point1_x, point1_y);
         pixel1 = *myPixel2;
         unsigned point2_lat = attractions[i+1].latitude;
         unsigned point2_longi = attractions[i+1].longitude;
-        unsigned point2_x = (Calculator::coordToPixel(point2_longi, point2_lat)).first();
-        unsigned point2_y = (Calculator::coordToPixel(point2_longi, point2_lat)).second();
+        unsigned point2_x = (Calculator::coordToPixel(point2_longi, point2_lat)).first;
+        unsigned point2_y = (Calculator::coordToPixel(point2_longi, point2_lat)).second;
         HSLAPixel& pixel2 = image.getPixel(point2_x, point2_y);
         pixel2 = *myPixel2;
         double slope = (point2_y - point1_y)/(point2_x - point1_x);
@@ -426,6 +426,6 @@ void addLines(PNG image, std::vector<Parsing::Location> attractions) {
             }
         }
     }
-    //return image;
+    image.writeToFile("../us_map.png");
 }
 
