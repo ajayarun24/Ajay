@@ -43,8 +43,9 @@ int main() {
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
     vector<Parsing::Location> i = graph.KruskalsMST();
+    //addLines(us_map.png,i);
+
     graph.printBFS(6, 7);    
     return 0;
 }
-
 
