@@ -189,3 +189,126 @@ void RoadTripGraph::printBFS(int start, int end) {
     }
     std::cout << "========================================================================= " << std::endl;
 }
+
+std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, int end) {
+    //returning vector of locations from start to end
+
+    vector<double> weights(locations.size());
+    vector<int> pred(locations.size());
+    vector<Parsing::Location> q;
+    vector<Parsing::Location> span;
+    vector<bool> visited(locations.size());
+
+    for (size_t i = 0; i < locations.size(); i++) {
+        visited[i] = false;
+        weights[i] = std::numeric_limits<double>::max();;
+        pred[i] = -1;
+    }
+
+
+
+    q.push_back(locations[start]);
+    span.push_back(locations[start]);
+
+    visited[start] = true;
+    weights[start] = 0;
+
+    //find adjacent vertices of vertex in spanning set most recently added to spanning set
+    //find minimum weight of those
+    //add to spset
+
+    while (!q.empty()) {
+        Parsing::Location t = q[0];
+        //std::cout<<t.name<<" b"<<std::endl;
+
+        
+        q.erase(q.begin());
+
+        // priority should just be priority of the one at the fron
+
+        size_t priority = t.priority;
+
+        //adds adjacent of current member of spanning set
+
+        for (size_t i = 0; i < locations.size(); i++)
+        {
+
+            if (adjacencyMatrix[i][priority] >= 0 && !visited[i])
+            {
+                
+                weights[i] = adjacencyMatrix[i][priority] + weights[priority];
+                pred[i] = priority;
+            }
+        }
+
+        
+
+        //if not in the current spanning set, checks distance from start and adds lowest to span and q/
+
+
+        double lowest = std::numeric_limits<double>::max();
+        double ind = 0;
+
+        for ( Parsing::Location  l : locations) {
+            if (visited[l.priority] == false) {
+                if (weights[l.priority] < lowest) {
+                    lowest = weights[l.priority];
+                    ind = l.priority;
+                }
+            }
+        }
+        visited[ind] = true;
+        span.push_back(locations[ind]);
+
+        q.push_back(locations[ind]);
+
+        if (visited[end]) break;
+    }
+
+//spanning set starts with just 1 element
+//check adjacent of that spanning set and add to q
+//erase 1st member
+
+//now for each of these assign distances that are the distance of the predecessor plus their own weight
+//also assign predecessor
+
+//go through all the distances, and add lowkey one to spanning set
+    
+
+    //have spanning set but don't know what edge was used
+
+    //distance and predecessor r fully populated at this point
+
+
+    //currentl have total distance from start to end
+
+    //just use pred
+
+
+
+    vector<Parsing::Location> path;
+
+    
+
+    int num = end;
+    
+    while (pred[num] != -1) {
+        path.insert(path.begin(), locations[num]);
+        num = pred[num];
+    }
+    path.insert(path.begin(), locations[start]);
+
+    std::pair<vector<Parsing::Location>, double> toReturn = std::make_pair(path, weights[end]);
+
+    return toReturn;
+}
+
+void RoadTripGraph::printDijkstra(int start, int end) {
+    std::pair<vector<Parsing::Location>, double> p = Dijkstra(start, end);
+
+    for (Parsing::Location a : p.first) {
+        std::cout<<a.name<<", "<<a.state<<std::endl;
+    }
+    std::cout<<p.second<<" KM to "<<locations[end].name<<std::endl;
+}
+
