@@ -313,53 +313,60 @@ void RoadTripGraph::printDijkstra(int start, int end) {
     std::cout<<p.second<<" KM to "<<locations[end].name<<std::endl;
 }
 
-void RoadTripGraph::addPoints(PNG image, std::vector<Parsing::Location> attractions) {
+PNG RoadTripGraph::addPoints(PNG image, std::vector<Parsing::Location> attractions)
+{
+    HSLAPixel *myPixel1 = new HSLAPixel(360, 0.8, 0.5);
+    for (size_t i = 0; i < attractions.size(); i++)
     {
-        HSLAPixel *myPixel1 = new HSLAPixel(360, 0.8, 0.5);
-        for (size_t i = 0; i < attractions.size(); i++) {
-            double lat = attractions[i].latitude;
-            double longi = attractions[i].longitude; 
-            int radius = 20;
-            for (int y = -radius; y <= radius; y++) {
-                for (int x = -radius; x <= radius; x++) {
-                if ((x*x + y*y) <= radius * radius) {
-                    HSLAPixel &pixel = image.getPixel(Calculator::coordToPixel(longi + x, lat + y).first, Calculator::coordToPixel(longi + x, lat + y).second);
-                    pixel = *myPixel1; 
-                }
+        double lat = attractions[i].latitude;
+        double longi = attractions[i].longitude; // HSLAPixel& pixel1 = image.getPixel(lat, longi);
+        int radius = 20;
+        for (int y = -radius; y <= radius; y++)
+        {
+            for (int x = -radius; x <= radius; x++)
+            {
+                if ((x * x + y * y) <= radius * radius)
+                {
+                    HSLAPixel &pixel = image.getPixel(Calculator::coordToPixel(longi, lat).first + x, Calculator::coordToPixel(longi, lat).second + y);
+                    pixel = *myPixel1;
                 }
             }
         }
     }
+    return image;
 }
 
-
-void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractions) {
+void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractions)
+{
     HSLAPixel *myPixel2 = new HSLAPixel(360, 0.8, 0.0);
-    RoadTripGraph::addPoints(image, attractions);
-    //HSLAPixel* myPixel2 = color2;
-    for (size_t i = 0; i < attractions.size() - 1; i++) {
-        unsigned point1_lat = attractions[i].latitude;
-        unsigned point1_longi = attractions[i].longitude;
-        unsigned point1_x = (Calculator::coordToPixel(point1_longi, point1_lat)).first;
-        unsigned point1_y = (Calculator::coordToPixel(point1_longi, point1_lat)).second;
-        HSLAPixel& pixel1 = image.getPixel(point1_x, point1_y);
+    // RoadTripGraph::addPoints(image, attractions);
+    // HSLAPixel* myPixel2 = color2;
+    for (size_t i = 0; i < attractions.size() - 1; i++)
+    {
+        double point1_lat = attractions[i].latitude;
+        double point1_longi = attractions[i].longitude;
+        double point1_x = (Calculator::coordToPixel(point1_longi, point1_lat)).first;
+        double point1_y = (Calculator::coordToPixel(point1_longi, point1_lat)).second;
+        HSLAPixel &pixel1 = image.getPixel(point1_x, point1_y);
         pixel1 = *myPixel2;
-        unsigned point2_lat = attractions[i+1].latitude;
-        unsigned point2_longi = attractions[i+1].longitude;
-        unsigned point2_x = (Calculator::coordToPixel(point2_longi, point2_lat)).first;
-        unsigned point2_y = (Calculator::coordToPixel(point2_longi, point2_lat)).second;
-        HSLAPixel& pixel2 = image.getPixel(point2_x, point2_y);
+        double point2_lat = attractions[i + 1].latitude;
+        double point2_longi = attractions[i + 1].longitude;
+        double point2_x = (Calculator::coordToPixel(point2_longi, point2_lat)).first;
+        double point2_y = (Calculator::coordToPixel(point2_longi, point2_lat)).second;
+        HSLAPixel &pixel2 = image.getPixel(point2_x, point2_y);
         pixel2 = *myPixel2;
-        double slope = (point2_y - point1_y)/(point2_x - point1_x);
-        if (point1_x < point2_x) {
-            for (unsigned x = point1_x; x <= point2_x; x++) {
-                HSLAPixel& pixel3 = image.getPixel(x, point1_y + (slope * (x - point1_x)));
-                HSLAPixel& pixel4 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 1));
-                HSLAPixel& pixel5 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 2));
-                HSLAPixel& pixel6 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 3));
-                HSLAPixel& pixel7 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 1));
-                HSLAPixel& pixel8 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 2));
-                HSLAPixel& pixel9 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 3));
+        double slope = (point2_y - point1_y) / (point2_x - point1_x);
+        if (point1_x < point2_x)
+        {
+            for (unsigned x = point1_x; x <= point2_x; x++)
+            {
+                HSLAPixel &pixel3 = image.getPixel(x, (point1_y + (slope * (x - point1_x))));
+                HSLAPixel &pixel4 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 1)));
+                HSLAPixel &pixel5 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 2)));
+                HSLAPixel &pixel6 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 3)));
+                HSLAPixel &pixel7 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 1)));
+                HSLAPixel &pixel8 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 2)));
+                HSLAPixel &pixel9 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 3)));
                 pixel3 = *myPixel2;
                 pixel4 = *myPixel2;
                 pixel5 = *myPixel2;
@@ -367,17 +374,19 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
                 pixel7 = *myPixel2;
                 pixel8 = *myPixel2;
                 pixel9 = *myPixel2;
-            } 
+            }
         }
-        if (point1_x > point2_x) {
-            for (unsigned x = point1_x; x >= point2_x; x--) {
-                HSLAPixel& pixel3 = image.getPixel(x, point1_y + (slope * (x - point1_x)));
-                HSLAPixel& pixel4 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 1));
-                HSLAPixel& pixel5 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 2));
-                HSLAPixel& pixel6 = image.getPixel(x, point1_y + (slope * (x - point1_x) + 3));
-                HSLAPixel& pixel7 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 1));
-                HSLAPixel& pixel8 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 2));
-                HSLAPixel& pixel9 = image.getPixel(x, point1_y + (slope * (x - point1_x) - 3));
+        if (point1_x > point2_x)
+        {
+            for (unsigned x = point1_x; x >= point2_x; x--)
+            {
+                HSLAPixel &pixel3 = image.getPixel(x, (point1_y + (slope * (x - point1_x))));
+                HSLAPixel &pixel4 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 1)));
+                HSLAPixel &pixel5 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 2)));
+                HSLAPixel &pixel6 = image.getPixel(x, (point1_y + (slope * (x - point1_x) + 3)));
+                HSLAPixel &pixel7 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 1)));
+                HSLAPixel &pixel8 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 2)));
+                HSLAPixel &pixel9 = image.getPixel(x, (point1_y + (slope * (x - point1_x) - 3)));
                 pixel3 = *myPixel2;
                 pixel4 = *myPixel2;
                 pixel5 = *myPixel2;
@@ -385,18 +394,21 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
                 pixel7 = *myPixel2;
                 pixel8 = *myPixel2;
                 pixel9 = *myPixel2;
-            } 
+            }
         }
-        if (point1_x == point2_x) {
-            if (point1_y < point2_y) {
-                for (unsigned y = point1_y; y <= point2_y; y++) {
-                    HSLAPixel& pixel3 = image.getPixel(point1_x, y);
-                    HSLAPixel& pixel4 = image.getPixel(point1_x + 1, y);
-                    HSLAPixel& pixel5 = image.getPixel(point1_x + 2, y);
-                    HSLAPixel& pixel6 = image.getPixel(point1_x + 3, y);
-                    HSLAPixel& pixel7 = image.getPixel(point1_x - 1, y);
-                    HSLAPixel& pixel8 = image.getPixel(point1_x - 2, y);
-                    HSLAPixel& pixel9 = image.getPixel(point1_x - 3, y);
+        if (point1_x == point2_x)
+        {
+            if (point1_y < point2_y)
+            {
+                for (unsigned y = point1_y; y <= point2_y; y++)
+                {
+                    HSLAPixel &pixel3 = image.getPixel(point1_x, y);
+                    HSLAPixel &pixel4 = image.getPixel(point1_x + 1, y);
+                    HSLAPixel &pixel5 = image.getPixel(point1_x + 2, y);
+                    HSLAPixel &pixel6 = image.getPixel(point1_x + 3, y);
+                    HSLAPixel &pixel7 = image.getPixel(point1_x - 1, y);
+                    HSLAPixel &pixel8 = image.getPixel(point1_x - 2, y);
+                    HSLAPixel &pixel9 = image.getPixel(point1_x - 3, y);
                     pixel3 = *myPixel2;
                     pixel4 = *myPixel2;
                     pixel5 = *myPixel2;
@@ -406,15 +418,17 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
                     pixel9 = *myPixel2;
                 }
             }
-            if (point1_y > point2_y) {
-                for (unsigned y = point1_y; y >= point2_y; y--) {
-                    HSLAPixel& pixel3 = image.getPixel(point1_x, y);
-                    HSLAPixel& pixel4 = image.getPixel(point1_x + 1, y);
-                    HSLAPixel& pixel5 = image.getPixel(point1_x + 2, y);
-                    HSLAPixel& pixel6 = image.getPixel(point1_x + 3, y);
-                    HSLAPixel& pixel7 = image.getPixel(point1_x - 1, y);
-                    HSLAPixel& pixel8 = image.getPixel(point1_x - 2, y);
-                    HSLAPixel& pixel9 = image.getPixel(point1_x - 3, y);
+            if (point1_y > point2_y)
+            {
+                for (unsigned y = point1_y; y >= point2_y; y--)
+                {
+                    HSLAPixel &pixel3 = image.getPixel(point1_x, y);
+                    HSLAPixel &pixel4 = image.getPixel(point1_x + 1, y);
+                    HSLAPixel &pixel5 = image.getPixel(point1_x + 2, y);
+                    HSLAPixel &pixel6 = image.getPixel(point1_x + 3, y);
+                    HSLAPixel &pixel7 = image.getPixel(point1_x - 1, y);
+                    HSLAPixel &pixel8 = image.getPixel(point1_x - 2, y);
+                    HSLAPixel &pixel9 = image.getPixel(point1_x - 3, y);
                     pixel3 = *myPixel2;
                     pixel4 = *myPixel2;
                     pixel5 = *myPixel2;
@@ -426,6 +440,11 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
             }
         }
     }
-image.writeToFile("../us_map.png");
+    image.writeToFile("us_map1.png");
 }
 
+void RoadTripGraph::drawImage(std::vector<Parsing::Location> attractions){
+    PNG hi;
+    hi.readFromFile("us_map.png");
+    RoadTripGraph::addLines(RoadTripGraph::addPoints(hi, attractions), attractions);
+}
