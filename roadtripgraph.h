@@ -46,7 +46,9 @@ class RoadTripGraph {
 
     void printDijkstra(int start, int end);
 
-    static void addPoints(PNG image, std::vector<Parsing::Location> attractions);
+    static PNG addPoints(PNG image, std::vector<Parsing::Location> attractions);
 
     static void addLines(PNG image, std::vector<Parsing::Location> attractions);
+
+    static void drawImage(std::vector<Parsing::Location> attractions);
 };

@@ -18,12 +18,13 @@ int main() {
     //Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-    //vector<Parsing::Location> i = graph.KruskalsMST();
-    vector<Parsing::Location> bfs = graph.BFS(6,7);
-    graph.printBFS(6, 7);
-   // graph.printDijkstra(1, 14);
 
-    cout << "\n================================================================================== \n " << endl;
+   // vector<Parsing::Location> i = graph.KruskalsMST();
+    vector<Parsing::Location> bfs = graph.BFS(0, 12);
+   // graph.printBFS(0, 4);
+   // graph.printDijkstra(1, 14);
+    RoadTripGraph::drawImage(bfs);
+
 
     return 0;
 }
