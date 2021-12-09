@@ -13,8 +13,8 @@ TEST_CASE("Run input code", "[fileio"){
      RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
      graph.createGraph();
      vector<Parsing::Location> i = graph.KruskalsMST();
-     vector<Parsing::Location> bfs = graph.BFS(0,4);
-     graph.printBFS(0, 4);
+     vector<Parsing::Location> bfs = graph.BFS(0,1);
+     graph.printBFS(0, 1);
      graph.printDijkstra(1, 14);
      PNG hi;
      hi.readFromFile("../us_map.png");
