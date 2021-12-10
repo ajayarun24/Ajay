@@ -47,3 +47,30 @@ TEST_CASE("Test_Neihboring_States","[fileio]"){
    REQUIRE(secondTest);
 }
 
+TEST_CASE("Test Dijkstra shortest path", "[fileio]")
+{
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    bool firstTest = true;
+    Parsing tester;
+    vector<Parsing::Location> temp = tester.diffLocations;
+    
+    vector<Parsing::Location> minPath;
+    minPath = graph.Dijkstra(1, 14).first;
+
+    REQUIRE(minPath.size() == 18);
+}
+TEST_CASE("Test Dijkstra correct distance", "[fileio]")
+{
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    bool firstTest = true;
+    Parsing tester;
+    vector<Parsing::Location> temp = tester.diffLocations;
+
+    std::pair<vector<Parsing::Location>, double> minPath;
+    minPath = graph.Dijkstra(1, 14);
+    double testKM = minPath.second;
+
+    REQUIRE(testKM >0);
+}
