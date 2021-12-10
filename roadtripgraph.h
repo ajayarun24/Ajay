@@ -24,7 +24,7 @@ class RoadTripGraph {
 
     bool checkNeighbor(string name, vector<string> neighbors) ;
 
-    vector<Parsing::Location> KruskalsMST();
+    vector<Parsing::Location> KruskalsMST(bool shouldPrint);
 
     std::pair<vector<Parsing::Location>, double> BFS(int start, int end);
 

@@ -45,10 +45,12 @@ bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
     return false;
 }
 
-vector<Parsing::Location> RoadTripGraph::KruskalsMST()
+vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
 {
+    if(shouldPrint){
     std::cout << "========================================================================= " << std::endl;
     std::cout << "The minimum spanning tree for the current attractions has the following edges:" << std::endl;
+    }
     vector<Parsing::Location> VisitedPlaces;
     vector<bool> isVisited(adjacencyMatrix[0].size(),false);
 
@@ -79,8 +81,11 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST()
         }
 
         union1(a, b);
+        if(shouldPrint){
         printf("Edge %d:(%d, %d) cost:%f \n",
-               edge_count++, a, b, min);
+               edge_count, a, b, min);
+        }
+        edge_count++;
         if(!isVisited[a]){
             VisitedPlaces.push_back(locations[a]);
             isVisited[a]=true;
@@ -93,8 +98,10 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST()
 
         mincost += min;
     }
+    if(shouldPrint){
     printf("The minumum distance in KM = %f \n", mincost);
     std::cout << "========================================================================= " << std::endl;
+    }
     return VisitedPlaces;
 }
 
@@ -444,7 +451,7 @@ void RoadTripGraph::runProgram(){
     {
         startIdx = locationsStartIdx[rand() % locationsStartIdx.size()];
         endIdx = locationEndIdx[rand() % locationEndIdx.size()];
-        vector<Parsing::Location> i = graph.KruskalsMST();
+        vector<Parsing::Location> i = graph.KruskalsMST(true);
         vector<Parsing::Location> bfs = graph.BFS(startIdx, endIdx).first;
         vector<Parsing::Location> djstrikasResult = graph.Dijkstra(startIdx,endIdx).first;
         graph.printBFS(startIdx, endIdx);

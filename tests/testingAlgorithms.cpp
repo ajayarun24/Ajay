@@ -107,4 +107,24 @@ TEST_CASE("Test BFS", "[test bfs]") {
     REQUIRE(bfs.size() < graph.locations.size());
 }
 
+TEST_CASE("Test kruskals algorithm","[MST]"){
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+    vector<Parsing::Location> i = graph.KruskalsMST(false);
+    REQUIRE(i.size() == (graph.locations.size()));
+}
 
+TEST_CASE("Draw map", "[Map]"){
+    PNG original, final ;
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+
+    vector<Parsing::Location> bfs = graph.BFS(0, 14).first;
+
+    RoadTripGraph::drawImage(bfs);
+
+    original.readFromFile("us_map.png");
+    final.readFromFile("us_map1.png");
+
+    REQUIRE(!(original == final));
+}
