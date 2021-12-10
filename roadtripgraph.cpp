@@ -448,3 +448,43 @@ void RoadTripGraph::drawImage(std::vector<Parsing::Location> attractions){
     hi.readFromFile("us_map.png");
     RoadTripGraph::addLines(RoadTripGraph::addPoints(hi, attractions), attractions);
 }
+
+void RoadTripGraph::runProgram(){
+    // Make a graph
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+
+    string startingState, endingState;
+    int startIdx, endIdx;
+    std::cout << "Enter a starting destination state " << std::endl;
+    std::cin >> startingState;
+    std::cout << "Enter a ending destination state " << std::endl;
+    std::cin >> endingState;
+
+    startingState += "\r";
+    endingState += "\r";
+    srand(time(0));
+    vector<int> locationsStartIdx, locationEndIdx;
+
+    for (Parsing::Location i : graph.locations)
+    {
+        if (i.state == startingState)
+            locationsStartIdx.push_back(i.priority);
+        if (i.state == endingState)
+            locationEndIdx.push_back(i.priority);
+    }
+    if (locationEndIdx.size() == 0 || locationsStartIdx.size() == 0)
+    {
+        std::cout << "Your inputs were not states " << std::endl;
+    }
+    else
+    {
+        startIdx = locationsStartIdx[rand() % locationsStartIdx.size()];
+        endIdx = locationEndIdx[rand() % locationEndIdx.size()];
+        vector<Parsing::Location> i = graph.KruskalsMST();
+        vector<Parsing::Location> bfs = graph.BFS(startIdx, endIdx);
+        graph.printBFS(startIdx, endIdx);
+        graph.printDijkstra(startIdx, endIdx);
+        RoadTripGraph::drawImage(bfs);
+    }
+}

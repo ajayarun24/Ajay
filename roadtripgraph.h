@@ -51,4 +51,6 @@ class RoadTripGraph {
     static void addLines(PNG image, std::vector<Parsing::Location> attractions);
 
     static void drawImage(std::vector<Parsing::Location> attractions);
+
+    static void runProgram();
 };

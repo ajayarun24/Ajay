@@ -9,11 +9,6 @@
 using ::RoadTripGraph;
 using ::Parsing;
 
-TEST_CASE("Run input code", "[fileio"){
-
-
-}
-
 TEST_CASE("test_basic_fileio", "[fileio]")
 {
     bool firstTest = true ;
