@@ -101,7 +101,7 @@ TEST_CASE("Test BFS", "[test bfs]") {
 
     int end = rand()%(graph.locations.size()+1);
 
-    vector<Parsing::Location> bfs = graph.BFS(start, end);
+    vector<Parsing::Location> bfs = graph.BFS(start, end).first;
 
     REQUIRE(bfs.size() > 0);
     REQUIRE(bfs.size() < graph.locations.size());
