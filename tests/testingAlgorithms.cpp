@@ -29,7 +29,7 @@ TEST_CASE("test_basic_fileio", "[fileio]")
     REQUIRE(rows>0);
 }
 
-TEST_CASE("Test_Neihboring_States","[fileio]"){
+TEST_CASE("Test_Neighboring_States","[fileio]"){
     bool secondTest = true;
     Parsing tester;
     tester.fillVector("data/CS225 final project data.csv");
@@ -74,4 +74,37 @@ TEST_CASE("Test Dijkstra correct distance", "[fileio]")
 
     REQUIRE(testKM >0);
 }
+
+TEST_CASE("Test creating AdjacencyMatrix", "[test matrix]") {
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+
+    // Checks if each location of the adjacency matrix has its list of edges populated
+    for (vector<double> l: graph.adjacencyMatrix) {
+        REQUIRE(l.size() == graph.locations.size());
+    }
+
+    // Checks if locations don't have edges with themselves
+    for (size_t i = 0; i < graph.locations.size(); i++) {
+        REQUIRE(graph.adjacencyMatrix[i][i] == -1);
+    } 
+
+}
+
+TEST_CASE("Test BFS", "[test bfs]") {
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+
+    srand(time(0));
+
+    int start = rand()%(graph.locations.size()+1);
+
+    int end = rand()%(graph.locations.size()+1);
+
+    vector<Parsing::Location> bfs = graph.BFS(start, end);
+
+    REQUIRE(bfs.size() > 0);
+    REQUIRE(bfs.size() < graph.locations.size());
+}
+
 

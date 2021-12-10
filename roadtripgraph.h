@@ -26,7 +26,7 @@ class RoadTripGraph {
 
     vector<Parsing::Location> KruskalsMST();
 
-    vector<Parsing::Location> BFS(int start, int end);
+    std::pair<vector<Parsing::Location>, double> BFS(int start, int end);
 
     void printBFS(int start, int end);
 

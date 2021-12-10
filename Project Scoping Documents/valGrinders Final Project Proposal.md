@@ -50,9 +50,7 @@ Our road trip planner algorithm will take in two graph data algorithms: it will 
 
 construct a map of our desired region (the United States) by identifying which state will be
 
-connected to the previous state with their edges based on their bordering state options (Prim’s
-
-algorithm), secondly, it will find the shortest possible path from the start to end location using
+connected to the previous state with their edges based on their bordering state options (Kruskals), secondly, it will find the shortest possible path from the start to end location using
 
 Dijkstra’s algorithm (most efficient road-trip route). Since we will be using priority queues
 
