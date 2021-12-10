@@ -4,7 +4,7 @@ Last week update: We now have made significant progess towards completing our 3 
 
 We then divided work for our next week:
 
-Sarthak will be adjusting Prims algorithm and creating a test suite to ensure accuracy of algorithm in regards to I/O of project.
+Sarthak will be adjusting Kruskals algorithm and creating a test suite to ensure accuracy of algorithm in regards to I/O of project.
 Jaylen will be using the PNG class to display a minimum spanning tree of the vector of locations returned from Djstrikas algorithm, a list of tourist locations to vist along the path from one input state to another. 
 Pranav will be testing the BFS search algorithm, print the BFS path in the terminal, test the adjacency matrix, and review other algorithms in our project pipeline. 
 Ajay will be working towards completing Djstrikas algorithm, creating a test suite, and printing the output of locations to the terminal.
