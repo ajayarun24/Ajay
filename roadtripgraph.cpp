@@ -175,7 +175,7 @@ void RoadTripGraph::printBFS(int start, int end) {
     temp1.pop_back();
     temp2.pop_back();
 
-    std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route with the least attractions "<<std::endl;
+    std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route while using BFS "<<std::endl;
     vector<Parsing::Location> path = BFS(start, end);
     static int counter = 1;
     for (Parsing::Location i: path)
@@ -307,8 +307,23 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
 void RoadTripGraph::printDijkstra(int start, int end) {
     std::pair<vector<Parsing::Location>, double> p = Dijkstra(start, end);
 
-    for (Parsing::Location a : p.first) {
-        std::cout<<a.name<<", "<<a.state<<std::endl;
+    string temp1 = locations[start].state;
+    string temp2 = locations[end].state;
+    temp1.pop_back();
+    temp2.pop_back();
+
+    std::cout << " To get from " << temp1 << " to " << temp2 << " here is the route with the Dijkstra's algo " << std::endl;
+
+    static int counter = 1;
+    for (Parsing::Location i : p.first)
+    {
+        std::stringstream ss;
+        ss << counter;
+        string str = ss.str();
+
+        string temp = str + " -> " + i.name + ", " + i.state + "\n";
+        counter++;
+        std::cout << temp;
     }
     std::cout<<p.second<<" KM to "<<locations[end].name<<std::endl;
 }
@@ -483,8 +498,23 @@ void RoadTripGraph::runProgram(){
         endIdx = locationEndIdx[rand() % locationEndIdx.size()];
         vector<Parsing::Location> i = graph.KruskalsMST();
         vector<Parsing::Location> bfs = graph.BFS(startIdx, endIdx);
+        vector<Parsing::Location> djstrikasResult = graph.Dijkstra(startIdx,endIdx).first;
         graph.printBFS(startIdx, endIdx);
         graph.printDijkstra(startIdx, endIdx);
-        RoadTripGraph::drawImage(bfs);
+        std::cout << "===========================================================================" << std::endl;
+
+        string graph;
+        std::cout << "If you would like to see the path with Dijkstra's press 1  \n If you want to see the path with BFS press any other key" << std::endl;
+        std::cin >> graph;
+
+        if(graph == "1"){
+            RoadTripGraph::drawImage(djstrikasResult);
+        }
+        else{
+            RoadTripGraph::drawImage(bfs);
+        }
+
+            std::cout << "Check us_map1.png for your path " << std::endl;
+        
     }
 }

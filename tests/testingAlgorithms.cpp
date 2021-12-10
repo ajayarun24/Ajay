@@ -46,3 +46,4 @@ TEST_CASE("Test_Neihboring_States","[fileio]"){
     }
    REQUIRE(secondTest);
 }
+
