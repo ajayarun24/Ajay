@@ -165,8 +165,8 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
 
     int num = end;
 
-    int dist =0;
-    
+    double dist = 0;
+
     while (pred[num] != -1) {
         path.insert(path.begin(), locations[num]);
         dist+= adjacencyMatrix[num][pred[num]];
@@ -238,9 +238,11 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
 
             if (adjacencyMatrix[i][priority] >= 0 && !visited[i])
             {
-                
-                weights[i] = adjacencyMatrix[i][priority] + weights[priority];
-                pred[i] = priority;
+                if (weights[i] > adjacencyMatrix[i][priority] + weights[priority])
+                {
+                    weights[i] = adjacencyMatrix[i][priority] + weights[priority];
+                    pred[i] = priority;
+                }
             }
         }
 
