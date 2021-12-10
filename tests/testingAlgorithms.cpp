@@ -74,3 +74,4 @@ TEST_CASE("Test Dijkstra correct distance", "[fileio]")
 
     REQUIRE(testKM >0);
 }
+
