@@ -458,6 +458,10 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
     image.writeToFile("us_map1.png");
 }
 
+<<<<<<< HEAD
+
+
+=======
 void RoadTripGraph::drawImage(std::vector<Parsing::Location> attractions){
     PNG hi;
     hi.readFromFile("us_map.png");
@@ -518,3 +522,4 @@ void RoadTripGraph::runProgram(){
         
     }
 }
+>>>>>>> 2dd417668894dac3bcd22dd13dd7d0f9ca9f830e
