@@ -22,17 +22,26 @@ This is the file which updated after a program runs. This png will show the path
 
 ## How to run the program
 
-# To run the program you will need to run 
+###### To run the program you will need to run 
 1. make
 2. ./main
 
 After this you will be prompted to enter some inputs to decide how you want to use our planner. Initially you will be asked for a starting state. A correct input requires you to use the two letter abberviation for each state. Illinois for example is IL. Then you will be asked for an ending state. After that, our program will run and gereate an MST, BFS traversal, and Djstrikas algorthm. 
 
-You will then be asked to enter either "1" or anything else. This input will decide what we will be displaying on us_map1.png. 
-1 means you want to show Djstrikas
-Any other key means you want to show BFS
+<img width="189" alt="Screen Shot 2021-12-11 at 4 49 14 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/6ce9bae2-c13c-4e04-a35a-90ccfbb84e2a">
 
-After this input, us_map1.png will be populated and the program is donw
+<img width="549" alt="Screen Shot 2021-12-11 at 4 49 42 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/608b004e-b6e4-4afb-8807-4cc1621ddf47">
+
+
+
+You will then be asked to enter either "1" or anything else. This input will decide what we will be displaying on us_map1.png. 
+1 means you want to show Djstrikas. Any other key means you want to show BFS
+
+<img width="564" alt="Screen Shot 2021-12-11 at 4 50 05 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/befbb406-7cae-48dc-99bf-273552234012">
+
+After this input, us_map1.png will be populated and the program is done
+
+![us_map1](https://media.github-dev.cs.illinois.edu/user/9991/files/731eee0a-3be9-4f78-ba52-8f2a47a2eb18)
 
 
 ## How to test the program 
@@ -41,7 +50,7 @@ After this input, us_map1.png will be populated and the program is donw
 1. make test
 2. ./test
 
-# Our tests are broken down into a few sub sections
+###### Our tests are broken down into a few sub sections
 
 1. Parsing
 We make sure that when we parse our data that our data structure(a vector) that that vector is not empty and contained the same number of items as the number of lines in our csv file. We also make sure that the same is done for our other csv(neihboring states)
