@@ -28,10 +28,13 @@ To run the program you will need to run
 
 After this you will be prompted to enter some inputs to decide how you want to use our planner. Initially you will be asked for a starting state. A correct input requires you to use the two letter abberviation for each state. Illinois for example is IL. Then you will be asked for an ending state. After that, our program will run and gereate an MST, BFS traversal, and Djstrikas algorthm. 
 
+Here are the choices for states: 
+<img width="720" alt="Screen Shot 2021-12-11 at 4 53 26 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/463b02af-b88e-4750-a2a2-ef4067418cde">
+
+
 <img width="189" alt="Screen Shot 2021-12-11 at 4 49 14 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/6ce9bae2-c13c-4e04-a35a-90ccfbb84e2a">
 
 <img width="549" alt="Screen Shot 2021-12-11 at 4 49 42 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/608b004e-b6e4-4afb-8807-4cc1621ddf47">
-
 
 
 You will then be asked to enter either "1" or anything else. This input will decide what we will be displaying on us_map1.png. 
