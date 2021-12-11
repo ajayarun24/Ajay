@@ -28,7 +28,8 @@ To run the program you will need to run
 
 After this you will be prompted to enter some inputs to decide how you want to use our planner. Initially you will be asked for a starting state. A correct input requires you to use the two letter abberviation for each state. Illinois for example is IL. Then you will be asked for an ending state. After that, our program will run and gereate an MST, BFS traversal, and Djstrikas algorthm. 
 
-Here are the choices for states: 
+Here are the choices for states(Except Hawaii and Alaska):
+
 <img width="720" alt="Screen Shot 2021-12-11 at 4 53 26 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/463b02af-b88e-4750-a2a2-ef4067418cde">
 
 
