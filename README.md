@@ -1,10 +1,8 @@
-# ajayka2-singh94-pranavr5-jaylenp2
-
-Tourist road trip planner
+# Tourist road trip planner
 
 This program helps create a road trip from one state to another with a variety of algorthms and traversals. Given an input and ending state this program will utilize a dataset of attractions in the United States to find the most efficient path while still hitting as many attractions as is possible. The algorithms used are Kruskals MST algorithm, BFS, and Dijstrikas algorithm. 
 
-There are a few files/classes that contain the bulk of the codebase and data
+## The location of all major code, data, and results
 
 1. Data folder
 Inside of this folder are out two datasets: CS225 final project data.csv and data/neighbors-states.csv. The first contained the names, coordinates, index, and state of each attraction we are using. In the second was data relating to neighboring states in the US as we needed to know which edges our graph needed to have. 
@@ -22,9 +20,9 @@ Some of the earlier mentioned algorthms required us to perform some repeated mat
 This is the file which updated after a program runs. This png will show the path that is depicted in terminal. 
 
 
-How to run the program
+## How to run the program
 
-To run the program you will need to run 
+# To run the program you will need to run 
 1. make
 2. ./main
 
@@ -37,13 +35,13 @@ Any other key means you want to show BFS
 After this input, us_map1.png will be populated and the program is donw
 
 
-How to test the program 
+## How to test the program 
 
-To test the program you need to run 
+# To test the program you need to run 
 1. make test
 2. ./test
 
-Our tests are broken down into a few sub sections
+# Our tests are broken down into a few sub sections
 
 1. Parsing
 We make sure that when we parse our data that our data structure(a vector) that that vector is not empty and contained the same number of items as the number of lines in our csv file. We also make sure that the same is done for our other csv(neihboring states)
