@@ -22,7 +22,7 @@ This is the file which updated after a program runs. This png will show the path
 
 ## How to run the program
 
-###### To run the program you will need to run 
+To run the program you will need to run 
 1. make
 2. ./main
 
