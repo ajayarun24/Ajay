@@ -128,3 +128,16 @@ TEST_CASE("Draw map", "[Map]"){
 
     REQUIRE(!(original == final));
 }
+
+TEST_CASE("Djstrikas vs BFS", "[Algorithms]")
+{
+    RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
+    graph.createGraph();
+
+    double bfsDistance = graph.BFS(0, 14).second;
+    double DjstrijasDistance = graph.Dijkstra(0, 14).second;
+
+    REQUIRE(bfsDistance > 0);
+    REQUIRE(DjstrijasDistance > 0);
+    REQUIRE(DjstrijasDistance < bfsDistance);
+}
