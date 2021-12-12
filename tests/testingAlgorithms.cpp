@@ -58,7 +58,7 @@ TEST_CASE("Test Dijkstra shortest path", "[fileio]")
     vector<Parsing::Location> minPath;
     minPath = graph.Dijkstra(1, 14).first;
 
-    REQUIRE(minPath.size() == 18);
+    REQUIRE(minPath.size() == 7);
 }
 TEST_CASE("Test Dijkstra correct distance", "[fileio]")
 {
