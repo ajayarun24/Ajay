@@ -1,6 +1,6 @@
 # Tourist road trip planner
 
-This program helps create a road trip from one state to another with a variety of algorthms and traversals. Given an input and ending state this program will utilize a dataset of attractions in the United States to find the most efficient path while still hitting as many attractions as is possible. The algorithms used are Kruskals MST algorithm, BFS, and Dijstrikas algorithm. 
+This program helps create a road trip from one state to another with a variety of algorthms and traversals. Given an input and ending state this program will utilize a dataset of attractions in the United States to find the most efficient path while still hitting as many attractions as is possible. The algorithms used are Kruskals MST algorithm, BFS, and Dijkstra's algorithm. 
 
 ## The location of all major code, data, and results
 
@@ -26,7 +26,7 @@ To run the program you will need to run
 1. make
 2. ./main
 
-After this you will be prompted to enter some inputs to decide how you want to use our planner. Initially you will be asked for a starting state. A correct input requires you to use the two letter abberviation for each state. Illinois for example is IL. Then you will be asked for an ending state. After that, our program will run and gereate an MST, BFS traversal, and Djstrikas algorthm. 
+After this you will be prompted to enter some inputs to decide how you want to use our planner. Initially you will be asked for a starting state. A correct input requires you to use the two letter abberviation for each state. Illinois for example is IL. Then you will be asked for an ending state. After that, our program will run and gereate an MST, BFS traversal, and Dijkstra's algorthm. 
 
 Here are the choices for states(Except Hawaii and Alaska):
 
@@ -62,9 +62,8 @@ We make sure that when we parse our data that our data structure(a vector) that 
 3. Graph creation
 We create an adjacency matrix and make sure that there are no edges between a node and itself
 
-5. Djstrikas algorithm
-We make sure that the total distance is less than that of bfs and the fact the traversal starts and ends in two different states
-Ajay fill in
+5. Dijkstra's algorithm
+We decided to use two test cases for Dijkstra's algorithm: in the first case, we test to ensure that the shortest path is actually generated, and in the second we test that the KM returned is accurate. For the shortest path test, we simply hand traced the distance between two input states (1 and 14, or Alabama and Arizona), and made sure the amount of stops which should be taken is equal to the size of the vector holding the states crossed. For the correct distance test, we again hand-traced the distance crossed and made sure it matched the distance returned (with a small tolerance).
 
 6. BFS
 Pranav fill in
