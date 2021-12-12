@@ -69,8 +69,10 @@ We decided to use two test cases for Dijkstra's algorithm: in the first case, we
 Pranav fill in
 
 7. Kruskals algorithm
-We make sure that the number of edges is equal to the number of nodes within our map
+We make sure that the number of edges is equal to the number of nodes within our map. This is the best way to make sure no node was included twice and that we in fact created a minimum spanning tree
 
+8. Overall logic
+We also included tests that compared BFS and Djstrikal algorithm to make sure they worked properly. We wanted to make sure the total distance traveled from a certain state to another had a shorter distance when running Djstrikas as compared to BFS
 
-8. Output logic
-We make sure that the hash of our input map is different from the output map as the output should have a traversal. 
+9. Output logic
+We make sure that the hash of our input map is different from the output map as the output should have a traversal on it. Furthermore this test ensures that the image that we are using can be decoded by the PNG class
