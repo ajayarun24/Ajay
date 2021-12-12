@@ -17,7 +17,6 @@ using ::RoadTripGraph;
 int main() {
    
     RoadTripGraph::runProgram();
-    
     return 0;
 }
 
