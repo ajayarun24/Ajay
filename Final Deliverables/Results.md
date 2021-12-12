@@ -8,22 +8,9 @@ Although we found it a little difficult to write really specific tests because t
 
 
 
+<img width="768" alt="Screen Shot 2021-12-12 at 4 18 29 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/42a1bdb5-f78f-45ad-8ceb-a104e6740a74">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="697" alt="Screen Shot 2021-12-12 at 4 18 49 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/a6ae7d43-fbf8-44c3-9674-c814394fc47d">
 
 
 
@@ -32,20 +19,12 @@ Besides writing test suites, the easy way to see the final result is to just run
 For the input to our algorithms we took in a state, and randomly picked one attraction in the state to start at and did the same for the end point. When ran from CA to NY the following output is returned:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="574" alt="Screen Shot 2021-12-12 at 4 21 28 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/1769f2bc-c992-4b75-9b55-7c5b1ebb10d8">
 
 The map output looks like this:
+
+<img width="1158" alt="Screen Shot 2021-12-12 at 4 21 56 PM" src="https://media.github-dev.cs.illinois.edu/user/9991/files/1ab6d904-9248-41d9-9648-24065c5750ec">
+
 
 Discoveries:
 We ran into a few problems and made a few discoveries throughout the course of this project. But I think they can be condensed to just two things. First of all, when writing Dijkstra’s we ended up getting paths which were not efficient and sometimes even longer than BFS. However, we realized that we weren’t updating the weights of the vertices in the queue everytime they were added, which led to less efficient minimum routes. We also discovered that we needed to have an attraction in each state in order to find the most efficient path in the graph. When that condition was not met, we were met with errors, bad routes, and more. Overall, there were a few major issues we faced, but persevered to get a working result.
