@@ -172,7 +172,6 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
         dist+= adjacencyMatrix[num][pred[num]];
         num = pred[num];
     }
-    dist+= adjacencyMatrix[num][pred[num]];
     path.insert(path.begin(), locations[start]);
 
     std::pair<vector<Parsing::Location>, double> f = std::make_pair(path, dist);
