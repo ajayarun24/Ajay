@@ -12,23 +12,22 @@ using std::ios;
 
 class Parsing{
     public:
-
-    struct Location
-    {
-        string name;
-        double latitude, longitude;
-        int priority;
-        string state;
-        vector<string> neighboringStates;
-
-        Location(string Name, double lat, double longi, int priorityR, string StateN)
+        // Location struct contains the data we will use for each node of our dataset
+        struct Location
         {
-            name = Name;
-            latitude = lat;
-            longitude = longi;
-            state = StateN;
-            priority = priorityR;
-        }
+            string name;
+            double latitude, longitude;
+            int priority;
+            string state;
+            vector<string> neighboringStates;
+            Location(string Name, double lat, double longi, int priorityR, string StateN)
+            {
+                name = Name;
+                latitude = lat;
+                longitude = longi;
+                state = StateN;
+                priority = priorityR;
+            }
     };
     //Empty constructor doesnt do anything 
     Parsing();

@@ -66,7 +66,7 @@ We create an adjacency matrix and make sure that there are no edges between a no
 We decided to use two test cases for Dijkstra's algorithm: in the first case, we test to ensure that the shortest path is actually generated, and in the second we test that the KM returned is accurate. For the shortest path test, we simply hand traced the distance between two input states (1 and 14, or Alabama and Arizona), and made sure the amount of stops which should be taken is equal to the size of the vector holding the states crossed. For the correct distance test, we again hand-traced the distance crossed and made sure it matched the distance returned (with a small tolerance).
 
 6. BFS
-Pranav fill in
+We checked if the length of the path given by BFS is within the length of the total number of nodes. We also checked that BFS is consistently less efficient than Dijkstra's Algorithm. 
 
 7. Kruskals algorithm
 We make sure that the number of edges is equal to the number of nodes within our map. This is the best way to make sure no node was included twice and that we in fact created a minimum spanning tree

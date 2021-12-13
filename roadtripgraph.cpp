@@ -54,8 +54,10 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
     vector<Parsing::Location> VisitedPlaces;
     vector<bool> isVisited(adjacencyMatrix[0].size(),false);
 
+    //Grab our adjcaceny matrix and store a local copy of it
     vector<vector<double> > weights = adjacencyMatrix;
     int V = weights[0].size();
+    //Parent is our disjoint set
     parent.resize(V);
     double mincost = 0; 
 
@@ -64,6 +66,7 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
 
     int edge_count = 0;
     while (edge_count < V-1)
+    //While we have one less edge than the number of vertices
     {
         double min = INT_MAX;
         int a = -1, b = -1;
@@ -71,6 +74,7 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
         {
             for (int j = 0; j < V; j++)
             {
+                //If the edge is our lowest value and they are not connecting the same node then store the coordinates of it 
                 if (find(i) != find(j) && (weights[i][j] < min) && (weights[i][j] != -1))
                 {
                     min = weights[i][j];
@@ -79,13 +83,16 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
                 }
             }
         }
-
+        //Union the two nodes to check for cycle detection
         union1(a, b);
+        //Pring the edge
         if(shouldPrint){
         printf("Edge %d:(%d, %d) cost:%f \n",
                edge_count, a, b, min);
         }
         edge_count++;
+
+        //We want to maintain a vector of each of the nodes in case we want to show it on a map
         if(!isVisited[a]){
             VisitedPlaces.push_back(locations[a]);
             isVisited[a]=true;
@@ -95,7 +102,7 @@ vector<Parsing::Location> RoadTripGraph::KruskalsMST(bool shouldPrint)
             VisitedPlaces.push_back(locations[b]);
             isVisited[b] = true;
         }
-
+        //Increase the min cost for the spanning tree
         mincost += min;
     }
     if(shouldPrint){
@@ -172,7 +179,6 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
         dist+= adjacencyMatrix[num][pred[num]];
         num = pred[num];
     }
-    dist+= adjacencyMatrix[num][pred[num]];
     path.insert(path.begin(), locations[start]);
 
     std::pair<vector<Parsing::Location>, double> f = std::make_pair(path, dist);
@@ -414,8 +420,10 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
 }
 
 void RoadTripGraph::drawImage(std::vector<Parsing::Location> attractions){
+    //Read the us map and then call the draw function in the right order 
     PNG hi;
     hi.readFromFile("us_map.png");
+    //we want to add points first and then lines
     RoadTripGraph::addLines(RoadTripGraph::addPoints(hi, attractions), attractions);
 }
 
@@ -423,21 +431,21 @@ void RoadTripGraph::runProgram(){
     // Make a graph
     RoadTripGraph graph("data/CS225 final project data.csv", "data/neighbors-states.csv");
     graph.createGraph();
-
+    //Poll for a starting state and ending state
     string startingState, endingState;
     int startIdx, endIdx;
     std::cout << "Enter a starting state: " << std::endl;
     std::cin >> startingState;
     std::cout << "Enter an ending state: " << std::endl;
     std::cin >> endingState;
-
-    
-
+    //Out states in each struct has \r at the end so we add it on here
     startingState += "\r";
     endingState += "\r";
+    //Seed rand
     srand(time(0));
     vector<int> locationsStartIdx, locationEndIdx;
 
+    //Select a random attraction in the starting and ending state 
     for (Parsing::Location i : graph.locations)
     {
         if (i.state == startingState)
@@ -445,6 +453,7 @@ void RoadTripGraph::runProgram(){
         if (i.state == endingState)
             locationEndIdx.push_back(i.priority);
     }
+    //If nothing was found then the state they inputed doesnt exist
     if (locationEndIdx.size() == 0 || locationsStartIdx.size() == 0)
     {
         std::cout << "Your inputs were not states!" << std::endl;
@@ -453,17 +462,21 @@ void RoadTripGraph::runProgram(){
     {
         startIdx = locationsStartIdx[rand() % locationsStartIdx.size()];
         endIdx = locationEndIdx[rand() % locationEndIdx.size()];
+        //Call our three algorithms
         vector<Parsing::Location> i = graph.KruskalsMST(true);
         vector<Parsing::Location> bfs = graph.BFS(startIdx, endIdx).first;
         vector<Parsing::Location> djstrikasResult = graph.Dijkstra(startIdx,endIdx).first;
+        //Print the ones that have a seperate pring function 
         graph.printBFS(startIdx, endIdx);
         graph.printDijkstra(startIdx, endIdx);
         std::cout << "===========================================================================" << std::endl;
 
         string graph;
+        //Prompt the user to see what path they want to graphically see
         std::cout << "If you would like to see the path with Dijkstra's press 1.  \nIf you want to see the path with BFS press any other key." << std::endl;
         std::cin >> graph;
 
+        //Based on what they pick call our drawing function with the respective vector of type location
         if(graph == "1"){
             RoadTripGraph::drawImage(djstrikasResult);
         }
