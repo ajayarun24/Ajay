@@ -12,6 +12,8 @@ double Calculator::calculateDistance(double lat1, double long1, double lat2, dou
     double a = sin(diffLat / 2) * sin(diffLat / 2) + cos(radLat1) * cos(radLat2) * sin(diffLong / 2) * sin(diffLong / 2);
     double c = 2 * atan2(sqrt(a), sqrt(1 - a));
 
+    // Finds distance and returns
+
     return (radius * c);
 }
 

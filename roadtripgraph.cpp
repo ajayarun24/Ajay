@@ -8,6 +8,7 @@ RoadTripGraph::RoadTripGraph(string placesFileName, string stateFileName) {
     Parsing myParse;
     myParse.fillVector(placesFileName);
     myParse.fillNeighboringStates(stateFileName) ;
+    // Parses locations and sets local variable
     locations = myParse.diffLocations;
 }
 
@@ -20,7 +21,7 @@ void RoadTripGraph::createGraph()
     {
         for (size_t y = 0; y < locations.size(); y++)
         {
-
+            // Checks if attractions should have edge between them
             if ((checkNeighbor(locations[x].state, locations[y].neighboringStates) || locations[x].state == locations[y].state) && locations[x].name != locations[y].name)
             {
                 adjacencyMatrix[x][y] = Calculator::calculateDistance(locations[x].latitude, locations[x].longitude,
@@ -29,6 +30,7 @@ void RoadTripGraph::createGraph()
             }
             else
             {
+                // If not pushes default values
                 adjacencyMatrix[x][y] = -1;
                 adjacencyList[x].push_back(nullptr);
             }
@@ -37,6 +39,7 @@ void RoadTripGraph::createGraph()
 }
 
 bool RoadTripGraph::checkNeighbor(string name, vector<string> neighbors) {
+    // Checks if attraction is neighbor to other
     for (string n: neighbors) {
         if (name == n) {
             return true;
@@ -127,6 +130,8 @@ int RoadTripGraph::find(int i)
 }
 
 std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int end) {
+
+    // Vectors to store information
     vector<bool> visited(locations.size());
 
     vector<Parsing::Location> l;
@@ -134,13 +139,14 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
     vector<int> distance(locations.size());
     vector<int> pred(locations.size());
 
+    // Sets defaults
     for (size_t i = 0; i < locations.size(); i++) {
         visited[i] = false;
         distance[i] = -1;
         pred[i] = -1;
     }
     
-
+    // Starts at starting node
     visited[start] = true;
     distance[start] = 0;
 
@@ -149,6 +155,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
 
     while (!l.empty())
     {
+        // Takes front of queue then deletes
         Parsing::Location t = l[0];
         l.erase(l.begin());
 
@@ -157,6 +164,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
         for (size_t i = 0; i < locations.size(); i++)
         {
 
+            // Adds adjacent vertices
             if (adjacencyMatrix[i][priority] >= 0 && !visited[i])
             {
                 visited[i] = true;
@@ -174,6 +182,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
 
     double dist = 0;
 
+    // Goes through predecessors to find path
     while (pred[num] != -1) {
         path.insert(path.begin(), locations[num]);
         dist+= adjacencyMatrix[num][pred[num]];
@@ -181,6 +190,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::BFS(int start, int e
     }
     path.insert(path.begin(), locations[start]);
 
+    // Returns path and distance
     std::pair<vector<Parsing::Location>, double> f = std::make_pair(path, dist);
     return f;
 }
@@ -191,6 +201,8 @@ void RoadTripGraph::printBFS(int start, int end) {
     temp1.pop_back();
     temp2.pop_back();
 
+
+    // Prints attractions in BFS, along with distance
     std::cout << "To get from " << temp1 << " to " << temp2 << " here is the route while using BFS:"<<std::endl;
     std::pair<vector<Parsing::Location>, double> b = BFS(start,end);
     vector<Parsing::Location> path = b.first;
@@ -211,12 +223,14 @@ void RoadTripGraph::printBFS(int start, int end) {
 
 std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, int end) {
 
+    // Vectors to store information
     vector<double> weights(locations.size());
     vector<int> pred(locations.size());
     vector<Parsing::Location> q;
     vector<Parsing::Location> span;
     vector<bool> visited(locations.size());
 
+    // Sets vectors to default values
     for (size_t i = 0; i < locations.size(); i++) {
         visited[i] = false;
         weights[i] = std::numeric_limits<double>::max();;
@@ -228,12 +242,13 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
     q.push_back(locations[start]);
     span.push_back(locations[start]);
 
+    // Starts at start node
     visited[start] = true;
     weights[start] = 0;
 
     while (!q.empty()) {
+        // Takes front of spanning set then erases
         Parsing::Location t = q[0];
-
         
         q.erase(q.begin());
 
@@ -241,7 +256,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
 
         for (size_t i = 0; i < locations.size(); i++)
         {
-
+            // Checks adjacent vertices, and updates distances relative to start accordingly
             if (adjacencyMatrix[i][priority] >= 0 && !visited[i])
             {
                 if (weights[i] > adjacencyMatrix[i][priority] + weights[priority])
@@ -255,7 +270,8 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
 
         double lowest = std::numeric_limits<double>::max();
         double ind = 0;
-
+        
+        // Finds lowest edge weight among those not in spanning set, and adds to spanning set
         for ( Parsing::Location  l : locations) {
             if (visited[l.priority] == false) {
                 if (weights[l.priority] < lowest) {
@@ -269,6 +285,7 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
 
         q.push_back(locations[ind]);
 
+        // Breaks once last point is visited
         if (visited[end]) break;
     }
 
@@ -277,7 +294,8 @@ std::pair<vector<Parsing::Location>, double> RoadTripGraph::Dijkstra(int start, 
     
 
     int num = end;
-    
+
+    // Goes through predecessors to find path
     while (pred[num] != -1) {
         path.insert(path.begin(), locations[num]);
         num = pred[num];
@@ -296,6 +314,8 @@ void RoadTripGraph::printDijkstra(int start, int end) {
     string temp2 = locations[end].state;
     temp1.pop_back();
     temp2.pop_back();
+
+    // Prints order of Dijkstra's along with distance traveled
 
     std::cout << "To get from " << temp1 << " to " << temp2 << " here is the route with the Dijkstra's algorithm:" << std::endl;
 
