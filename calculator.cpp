@@ -18,6 +18,7 @@ double Calculator::calculateDistance(double lat1, double long1, double lat2, dou
 }
 
     // Converts coordinates to a pixel based on the dimensions of our US map. Constants were determined using the latitude and longitude markers on the map
+    // pixel location is offsetted from the top right corner of our image
     // returns a type pair of the x pixel and y pixel
 
 std::pair<int, int> Calculator::coordToPixel(double longitude, double latitude)
