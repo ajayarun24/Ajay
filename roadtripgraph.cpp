@@ -336,16 +336,16 @@ void RoadTripGraph::printDijkstra(int start, int end) {
 PNG RoadTripGraph::addPoints(PNG image, std::vector<Parsing::Location> attractions)
 {
     HSLAPixel myPixel1 = HSLAPixel(360, 0.8, 0.5);
-    for (size_t i = 0; i < attractions.size(); i++)
+    for (size_t i = 0; i < attractions.size(); i++) //loop through all attractions along the way
     {
-        double lat = attractions[i].latitude;
-        double longi = attractions[i].longitude;
+        double lat = attractions[i].latitude; //extract latitude attraction
+        double longi = attractions[i].longitude; //extract longitude attraction
         int radius = 20;
         for (int y = -radius; y <= radius; y++)
         {
             for (int x = -radius; x <= radius; x++)
             {
-                if ((x * x + y * y) <= radius * radius)
+                if ((x * x + y * y) <= radius * radius) //only pixels within a circle of radius 20 will change color. Useful for plotting a circle at each destination
                 {
                     HSLAPixel &pixel = image.getPixel(Calculator::coordToPixel(longi, lat).first + x, Calculator::coordToPixel(longi, lat).second + y);
                     pixel = myPixel1;
@@ -356,6 +356,7 @@ PNG RoadTripGraph::addPoints(PNG image, std::vector<Parsing::Location> attractio
     return image;
 }
 
+    // draws a line between two destinations by determining slope between two points
 void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractions)
 {
     HSLAPixel myPixel2 = HSLAPixel(360, 0.8, 0.0);
@@ -374,13 +375,13 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
         HSLAPixel &pixel2 = image.getPixel(point2_x, point2_y);
         pixel2 = myPixel2;
         double slope = (point2_y - point1_y) / (point2_x - point1_x);
-        if (point1_x < point2_x)
+        if (point1_x < point2_x) //moving east from point1 to point 2
         {
             for (unsigned x = point1_x; x <= point2_x; x++)
             {
                 HSLAPixel &pixel3 = image.getPixel(x, (point1_y + (slope * (x - point1_x))));
                 pixel3 = myPixel2;
-                for (int i = 1; i < 4; i++) {
+                for (int i = 1; i < 4; i++) { //adds thickness to the line between 2 points
                     HSLAPixel &p = image.getPixel(x, (point1_y + (slope * (x - point1_x) + i)));
                     HSLAPixel &o = image.getPixel(x, (point1_y + (slope * (x - point1_x) - i)));
                     p = myPixel2;
@@ -388,7 +389,7 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
                 }
             }
         }
-        if (point1_x > point2_x)
+        if (point1_x > point2_x) //moving west from point1 to point2
         {
             for (unsigned x = point1_x; x >= point2_x; x--)
             {
@@ -404,7 +405,7 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
         }
         if (point1_x == point2_x)
         {
-            if (point1_y < point2_y)
+            if (point1_y < point2_y) //moving south from point1 to point2
             {
                 for (unsigned y = point1_y; y <= point2_y; y++)
                 {
@@ -418,7 +419,7 @@ void RoadTripGraph::addLines(PNG image, std::vector<Parsing::Location> attractio
                     }
                 }
             }
-            if (point1_y > point2_y)
+            if (point1_y > point2_y) //moving north from point1 to point2
             {
                 for (unsigned y = point1_y; y >= point2_y; y--)
                 {
